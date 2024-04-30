@@ -1,0 +1,6 @@
+@DungeonsAndDragons_ToolAndBuilder.Controllers_HostAddress = http://localhost:5162
+
+GET {{DungeonsAndDragons_ToolAndBuilder.Controllers_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

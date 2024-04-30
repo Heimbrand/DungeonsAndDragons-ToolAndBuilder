@@ -1,0 +1,6 @@
+@DungeonsAndDragons_ToolAndBuilder.MinimalApi_HostAddress = http://localhost:5101
+
+GET {{DungeonsAndDragons_ToolAndBuilder.MinimalApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

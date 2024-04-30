@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{B8B9B500-DCB8-4B33-87FE-75C7640DF007}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{475A76D2-0EBF-4A9E-A4D6-3971D2C55D83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controllers", "Controllers", "{508A0703-0182-4295-97B9-2E186C59651C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MinimalApi", "MinimalApi", "{732352C1-B309-4E53-BFE0-0D5CD36C5E4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FastEndpoints", "FastEndpoints", "{CB98545E-BDCC-43AA-B092-CD3E29FA1498}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Controllers", "DungeonsAndDragons-ToolAndBuilder.Controllers\DungeonsAndDragons-ToolAndBuilder.Controllers.csproj", "{765AD97B-319A-497C-A0EA-CD54A1609F55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.FastEndpoints", "DungeonsAndDragons-ToolAndBuilder.FastEndpoints\DungeonsAndDragons-ToolAndBuilder.FastEndpoints.csproj", "{7803BF7B-3F5C-4044-8DA2-23AA2375111A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.MinimalApi", "DungeonsAndDragons-ToolAndBuilder.MinimalApi\DungeonsAndDragons-ToolAndBuilder.MinimalApi.csproj", "{26181BD7-3545-470F-8A2C-05C142D95231}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F1D687D8-188E-4F3C-A146-FBF750DA5D22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Mongo", "DungeonsAndDragons-ToolAndBuilder.Mongo\DungeonsAndDragons-ToolAndBuilder.Mongo.csproj", "{62B5195E-2F1A-4363-AE26-7E6223E659E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.SQL", "DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj", "{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{33CC0C39-BD30-469C-8CAB-7235246FE019}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Shared", "DungeonsAndDragons-ToolAndBuilder.Shared\DungeonsAndDragons-ToolAndBuilder.Shared.csproj", "{94DD5231-AC73-4EF6-9D9D-15218E391691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsAndDragons-ToolAndBuilder.Client", "DungeonsAndDragons-ToolAndBuilder.Client\DungeonsAndDragons-ToolAndBuilder.Client.csproj", "{2F625BEF-2299-440D-BD6E-995C34E551BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{765AD97B-319A-497C-A0EA-CD54A1609F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765AD97B-319A-497C-A0EA-CD54A1609F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765AD97B-319A-497C-A0EA-CD54A1609F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765AD97B-319A-497C-A0EA-CD54A1609F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7803BF7B-3F5C-4044-8DA2-23AA2375111A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7803BF7B-3F5C-4044-8DA2-23AA2375111A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7803BF7B-3F5C-4044-8DA2-23AA2375111A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7803BF7B-3F5C-4044-8DA2-23AA2375111A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26181BD7-3545-470F-8A2C-05C142D95231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26181BD7-3545-470F-8A2C-05C142D95231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26181BD7-3545-470F-8A2C-05C142D95231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26181BD7-3545-470F-8A2C-05C142D95231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62B5195E-2F1A-4363-AE26-7E6223E659E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B5195E-2F1A-4363-AE26-7E6223E659E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B5195E-2F1A-4363-AE26-7E6223E659E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B5195E-2F1A-4363-AE26-7E6223E659E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F625BEF-2299-440D-BD6E-995C34E551BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F625BEF-2299-440D-BD6E-995C34E551BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F625BEF-2299-440D-BD6E-995C34E551BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F625BEF-2299-440D-BD6E-995C34E551BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{508A0703-0182-4295-97B9-2E186C59651C} = {33CC0C39-BD30-469C-8CAB-7235246FE019}
+		{732352C1-B309-4E53-BFE0-0D5CD36C5E4D} = {33CC0C39-BD30-469C-8CAB-7235246FE019}
+		{CB98545E-BDCC-43AA-B092-CD3E29FA1498} = {33CC0C39-BD30-469C-8CAB-7235246FE019}
+		{765AD97B-319A-497C-A0EA-CD54A1609F55} = {508A0703-0182-4295-97B9-2E186C59651C}
+		{7803BF7B-3F5C-4044-8DA2-23AA2375111A} = {CB98545E-BDCC-43AA-B092-CD3E29FA1498}
+		{26181BD7-3545-470F-8A2C-05C142D95231} = {732352C1-B309-4E53-BFE0-0D5CD36C5E4D}
+		{F1D687D8-188E-4F3C-A146-FBF750DA5D22} = {B8B9B500-DCB8-4B33-87FE-75C7640DF007}
+		{62B5195E-2F1A-4363-AE26-7E6223E659E8} = {F1D687D8-188E-4F3C-A146-FBF750DA5D22}
+		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1} = {F1D687D8-188E-4F3C-A146-FBF750DA5D22}
+		{33CC0C39-BD30-469C-8CAB-7235246FE019} = {B8B9B500-DCB8-4B33-87FE-75C7640DF007}
+		{2F625BEF-2299-440D-BD6E-995C34E551BC} = {475A76D2-0EBF-4A9E-A4D6-3971D2C55D83}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86CB585E-6699-497F-9722-AED0A674EEBE}
+	EndGlobalSection
+EndGlobal

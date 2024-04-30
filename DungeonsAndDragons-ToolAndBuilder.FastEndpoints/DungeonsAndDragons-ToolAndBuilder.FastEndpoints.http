@@ -1,0 +1,6 @@
+@DungeonsAndDragons_ToolAndBuilder.FastEndpoints_HostAddress = http://localhost:5255
+
+GET {{DungeonsAndDragons_ToolAndBuilder.FastEndpoints_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
