@@ -1,10 +1,13 @@
 # DungeonsAndDragons-ToolAndBuilder
 
 ## Current state of App: 
+
 New project, working on the design of the databases.
+
 ---
-###
----
+
+### Tables/Collections
+
 * This app will contain:
 * Characters
 * Npc's
@@ -23,7 +26,11 @@ New project, working on the design of the databases.
 * Events
 * Monster
 * Locations
+  
 ---
+
+### Features
+
 * A personal login where you can build your own characters
 * Create adventures
 * Create Sidequests
@@ -33,4 +40,5 @@ New project, working on the design of the databases.
 * Simulate fights between both other characters aswell as monsters to see how good your chances are. If i am satisfied with how "close to the truth" i get with the actual fights, i will also recommend it for in game usage.
 * View % chances of winning/losing
 * View Fighting logs (if you dont wish to follow the fights step by step)
+  
 ---
