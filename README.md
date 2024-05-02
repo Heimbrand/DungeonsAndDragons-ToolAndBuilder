@@ -1,7 +1,6 @@
 # DungeonsAndDragons-ToolAndBuilder
-##
-Current state of App: 
 
+## Current state of App: 
 New project, working on the design of the databases.
 ---
 ###
