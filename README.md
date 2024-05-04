@@ -12,9 +12,9 @@ a proper application which people who enjoys DnD actually can make use of.
 
 > The second part is focused more on interaction with the program. I plan on making it possible for users to have a secure account with hashed passwords.
 > With an own account, people will be able to build their on characters on there with a character sheet, collect items, import subclasses and do battles.
-> Everything will be limited by the rules of DnD 5:e. Meaning you can only import a subcalass when your level is high enough, you can only equip gear if the requirements are met etc.
+> Everything will be limited by the rules of DnD 5:e. Meaning you can only import a subclass when your level is high enough, you can only equip gear if the requirements are met etc.
 > As for the battles: I plan on first implementing a battle simulator of sorts. Where you can chose to battle different kinds of opponents such as npc's, other players and monsters to view what your odds are in a real battle.
-> If/When i ever get happy enough with the implementation of battles, meaning; its close enough to a real dnd battle. Then i might recommend it for "live use" in actual fights in adventures.
+> If/When i ever get happy enough with the implementation of battles, meaning; its close enough to a real dnd battle, then i might recommend it for "live use" in actual fights in adventures.
 
 ## Current state of App: 
 
