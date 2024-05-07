@@ -38,6 +38,7 @@ New project, working on the design of the databases.
 * Subclasses - SQL
 * SubRaces - SQL
 * Weapons - SQL
+* WeaponProperty - SQL
 * Worlds - SQL
 * Inventory - MongoDb
 * InventoryItems - MongoDb
