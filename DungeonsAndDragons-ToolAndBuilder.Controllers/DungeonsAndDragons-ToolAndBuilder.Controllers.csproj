@@ -7,4 +7,9 @@
     <RootNamespace>DungeonsAndDragons_ToolAndBuilder.Controllers</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.Mongo\DungeonsAndDragons-ToolAndBuilder.Mongo.csproj" />
+    <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj" />
+  </ItemGroup>
+
 </Project>
