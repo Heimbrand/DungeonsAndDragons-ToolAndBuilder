@@ -1,12 +1,10 @@
-using Blazorise;
-using Blazorise.Bootstrap5;
-using Blazorise.LoadingIndicator;
-using DungeonsAndDragons_ToolAndBuilder.Client.Components;
-using DungeonsAndDragons_ToolAndBuilder.Client.Components.Account;
-using DungeonsAndDragons_ToolAndBuilder.Client.Data;
+using DungeonsAndDragons_ToolAndBuilder.Mud.Client.Components;
+using DungeonsAndDragons_ToolAndBuilder.Mud.Client.Components.Account;
+using DungeonsAndDragons_ToolAndBuilder.Mud.Client.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,14 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddBlazorise(opt =>
-{
-    opt.Immediate = true;
-
-})
-.AddBootstrap5Providers()
-.AddBootstrap5Components()
-.AddLoadingIndicator();
+builder.Services.AddMudServices();
 
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();

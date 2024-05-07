@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap" Version="1.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.Mongo\DungeonsAndDragons-ToolAndBuilder.Mongo.csproj" />
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj" />
   </ItemGroup>
