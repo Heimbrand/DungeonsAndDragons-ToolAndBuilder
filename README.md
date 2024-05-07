@@ -18,25 +18,31 @@ New project, working on the design of the databases.
 
 ### Tables/Collections
 
-* Characters
-* Npc's
-* Factions
-* Classes
-* Subclasses
-* Spells/Actions
-* Weapons
-* Gear
-* Consumables
-* Crafting (Work in progress)
-* Magical artifacts
-* Trinkets, heirlooms etc
-* Quest items
-* Sidequests
-* Events
-* Monster
-* Locations
+* ApplicationUser - SQL
+* Characters - SQL
+* Classes - SQL
+* Consumables - SQL
+* Crafting (Work in progress) - SQL
+* Events - SQL
+* Factions - SQL
+* GameActions - SQL
+* Gear - SQL
+* Heirlooms - SQL
+* Locations - SQL
+* Magical artifacts - SQL
+* MiscellaneousItems - SQL
+* Monster - SQL
+* Npc's - SQL
+* Quest items - SQL
+* Sidequests - SQL
+* Subclasses - SQL
+* SubRaces - SQL
+* Weapons - SQL
+* Worlds - SQL
+* Inventory - MongoDb
+* InventoryItems - MongoDb
   
----
+  ---
 
 ### Features
 
