@@ -37,6 +37,7 @@ New project, working on the design of the databases.
 * Sidequests - SQL
 * Subclasses - SQL
 * SubRaces - SQL
+* Tag - SQL
 * Weapons - SQL
 * WeaponProperty - SQL
 * Worlds - SQL
