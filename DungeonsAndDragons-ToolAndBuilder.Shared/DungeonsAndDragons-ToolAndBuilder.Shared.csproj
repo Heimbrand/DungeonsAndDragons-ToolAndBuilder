@@ -8,6 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="AssetUrls\Monster\" />
+    <Folder Include="AssetUrls\Factions\" />
+    <Folder Include="AssetUrls\Characters\" />
+    <Folder Include="AssetUrls\Gear\" />
+    <Folder Include="AssetUrls\Heirlooms\" />
+    <Folder Include="AssetUrls\MiscellaneousItems\" />
+    <Folder Include="AssetUrls\Consumables\" />
+    <Folder Include="AssetUrls\Crafting\" />
+    <Folder Include="AssetUrls\Events\" />
+    <Folder Include="AssetUrls\GameActions\" />
+    <Folder Include="AssetUrls\Locations\" />
+    <Folder Include="AssetUrls\MagicalArtifacts\" />
+    <Folder Include="AssetUrls\SubRaces\" />
+    <Folder Include="AssetUrls\SubClasses\" />
+    <Folder Include="AssetUrls\SideQuests\" />
+    <Folder Include="AssetUrls\QuestItems\" />
+    <Folder Include="AssetUrls\Weapons\" />
+    <Folder Include="AssetUrls\Npcs\" />
+    <Folder Include="AssetUrls\Tilemaps\" />
+    <Folder Include="AssetUrls\Worlds\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Dtos\" />
     <Folder Include="Collections\" />
