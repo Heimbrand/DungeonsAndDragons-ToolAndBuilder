@@ -18,7 +18,6 @@ New project, working on the design of the databases.
 
 ### Tables/Collections
 
-* This app will contain:
 * Characters
 * Npc's
 * Factions
