@@ -1,6 +1,6 @@
 ﻿namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class ActionRepository
+public class WorldRepository
 {
     
 }
