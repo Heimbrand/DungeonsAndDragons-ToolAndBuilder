@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Mud.Client", "DungeonsAndDragons-ToolAndBuilder.Mud.Client\DungeonsAndDragons-ToolAndBuilder.Mud.Client.csproj", "{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2835585C-B431-46C0-B616-4F461CD44219}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TODO", "TODO", "{2835585C-B431-46C0-B616-4F461CD44219}"
 	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
+		TextFile1.md = TextFile1.md
 	EndProjectSection
 EndProject
 Global
