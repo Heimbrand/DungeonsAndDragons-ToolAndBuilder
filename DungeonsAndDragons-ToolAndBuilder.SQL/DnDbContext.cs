@@ -28,6 +28,7 @@ public class DnDbContext : DbContext
     public DbSet<Weapon> Weapons { get; set; }
     public DbSet<World> Worlds { get; set; }
 
+
     public DnDbContext(DbContextOptions<DnDbContext> options) : base(options)
     {
     }
