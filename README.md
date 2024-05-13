@@ -41,6 +41,22 @@ New project, working on the design of the databases.
 * Weapons - SQL
 * WeaponProperty - SQL
 * Worlds - SQL
+* LegendaryActions - SQL
+* Type - SQL
+* Alignments - SQL
+* Reaction - SQL
+* Skill - SQL
+* Size - SQL
+* DamageType - SQL
+* Condition - SQL
+* Sense - SQL
+* Challenge - SQL
+* Language - SQL
+* WeaponType - SQL
+* Ability - SQL
+* Trait - SQL
+
+
 * Inventory - MongoDb
 * InventoryItems - MongoDb
   
