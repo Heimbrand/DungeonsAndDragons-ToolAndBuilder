@@ -1,18 +1,9 @@
 
 
-### Entities not implemented in README
+### Todo
 
-* LegendaryActions
-* Type
-* Alignments
-* Reaction
-* Skill
-* Size
-* DamageType
-* Condition
-* Sense
-* Challenge
-* Language
-* WeaponType
-* 
+
+
+
+
         
