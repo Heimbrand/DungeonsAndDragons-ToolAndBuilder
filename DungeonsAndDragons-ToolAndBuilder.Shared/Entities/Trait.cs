@@ -2,6 +2,8 @@
 
 public class Trait
 {
+    // Special traits that are unique to that monster, character, or npc. See DnDBeoynd MonsterCards for reference.
+    
     public int Id { get; set; }
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }

@@ -2,6 +2,9 @@
 
 public class Skill
 {
+    // What is the purpose of this class?
+
+
     public int Id { get; set; }
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }

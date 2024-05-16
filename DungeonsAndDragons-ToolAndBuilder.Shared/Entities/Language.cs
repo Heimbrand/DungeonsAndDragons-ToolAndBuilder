@@ -7,4 +7,5 @@ public class Language
     public int CharacterId { get; set; }
     public int NpcId { get; set; }
     public string Name { get; set; } = default!;
+    public string? Description { get; set; }
 }

@@ -9,9 +9,9 @@ public class World
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? WorldUrl { get; set; }
-    public List<Tag>? Tags { get; set; } // This is a list of tags that are used to categorize the world
+    public List<Tag> WorldTags { get; set; } 
 
-  
+
 }
 
 

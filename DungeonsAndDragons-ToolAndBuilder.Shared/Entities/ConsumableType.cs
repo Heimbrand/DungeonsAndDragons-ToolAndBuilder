@@ -1,10 +1,8 @@
 ﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Location
+public class ConsumableType
 {
     public int Id { get; set; }
+    public int ConsumableId { get; set; }
     public string Name { get; set; } = default!;
-    public string? Description { get; set; }
-    public string? LocationUrl { get; set; }
-
 }

@@ -14,7 +14,7 @@ public class DnDbContext : DbContext
     public DbSet<Event> Events { get; set; }
     public DbSet<Faction> Factions { get; set; }
     public DbSet<GameAction> GameActions { get; set; }
-    public DbSet<Gear> Gear { get; set; }
+    public DbSet<Armor> Gear { get; set; }
     public DbSet<Heirloom> Heirlooms { get; set; }
     public DbSet<Location> Locations { get; set; }
     public DbSet<MagicalArtifact> MagicalArtifacts { get; set; }

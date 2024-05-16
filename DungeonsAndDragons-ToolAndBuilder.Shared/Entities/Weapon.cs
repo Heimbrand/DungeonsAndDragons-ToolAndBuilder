@@ -7,8 +7,9 @@ public class Weapon
     public string? Damage { get; set; } 
     public string? Weight { get; set; } 
     public string? Cost { get; set; } 
-    public List<Tag>? Tags { get; set; } 
+   public List<Tag> WeaponTags { get; set; } 
     public List<WeaponProperty>? Properties { get; set; }
     public DamageType? DamageType { get; set; }
+    public Rarity? Rarity { get; set; }
     public WeaponType? WeaponType { get; set; }
 }

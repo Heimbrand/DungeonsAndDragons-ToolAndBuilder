@@ -1,6 +1,6 @@
 ﻿namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class GearRepository
+public class ArmorRepository
 {
     
 }

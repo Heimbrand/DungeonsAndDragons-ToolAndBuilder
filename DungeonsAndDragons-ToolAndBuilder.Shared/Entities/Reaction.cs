@@ -2,6 +2,8 @@
 
 public class Reaction
 {
+    // Reactions are special actions that can be taken outside of a characters turn.
+
     public int Id { get; set; }
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }
