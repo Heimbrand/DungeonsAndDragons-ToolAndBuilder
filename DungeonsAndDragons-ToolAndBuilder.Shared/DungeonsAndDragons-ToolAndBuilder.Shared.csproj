@@ -28,9 +28,7 @@
     <Folder Include="AssetUrls\Npcs\" />
     <Folder Include="AssetUrls\Tilemaps\" />
     <Folder Include="AssetUrls\Worlds\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Dtos\" />
-    <Folder Include="Collections\" />
   </ItemGroup>
 
   <ItemGroup>

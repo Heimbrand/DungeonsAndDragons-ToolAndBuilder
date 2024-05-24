@@ -8,15 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.Shared\DungeonsAndDragons-ToolAndBuilder.Shared.csproj" />
+    <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,11 @@
 ﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Character
+public class Npc
 {
     public int Id { get; set; }
+    public Guid NpcGuid { get; set; }
     public string Name { get; set; } = default!;
-    public List<Tag> CharacterTags { get; set; }
+    public string? Description { get; set; }
+    public List<Tag> NpcTags {get; set; }
 
-}
+}   
