@@ -34,6 +34,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TODO", "TODO", "{2835585C-B431-46C0-B616-4F461CD44219}"
 	ProjectSection(SolutionItems) = preProject
 		Todo.md = Todo.md
+		CleanCode.md = CleanCode.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C602CFF3-E1E2-41F1-9180-111F9720262D}"
