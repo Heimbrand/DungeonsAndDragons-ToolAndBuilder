@@ -4,7 +4,6 @@
 * Look so that all Weight properties are doubles
 * Look So that all Cost properties are doubles
 * Deal with nullable warnings before migrations
-* create race class
 
 
  ## Entities not yet checked 
@@ -17,6 +16,7 @@
 * ability
 * subclass
 * subrace
+* Race
 
 
 # Done

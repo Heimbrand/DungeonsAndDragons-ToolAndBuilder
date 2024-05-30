@@ -26,7 +26,7 @@ public class Monster : IEntity<int>
     public List<Skill> Skills { get; set; }
     public List<Reaction> Reactions { get; set; }
     public List<GameAction> Actions { get; set; }
-    public List<LegendaryActions> LegendaryActions { get; set; }
+    public List<LegendaryAction> LegendaryActions { get; set; }
     public List<Language> Languages { get; set; }
     public Type Type { get; set; }
     public Size Size { get; set; }

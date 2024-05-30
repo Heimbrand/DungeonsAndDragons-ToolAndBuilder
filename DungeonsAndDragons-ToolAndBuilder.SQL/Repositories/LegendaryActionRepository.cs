@@ -3,34 +3,34 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class ConsumableRepository : IConsumableRepository
+public class LegendaryActionRepository : ILegendaryActionRepository
 {
-    public Task<Consumable> GetByIdAsync(int id)
+    public Task<LegendaryAction> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Consumable>> GetAllAsync()
+    public Task<IEnumerable<LegendaryAction>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Consumable>> GetMany(int start, int count)
+    public Task<IEnumerable<LegendaryAction>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Consumable> AddAsync(Consumable entity)
+    public Task<LegendaryAction> AddAsync(LegendaryAction entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Consumable> UpdateAsync(Consumable entity)
+    public Task<LegendaryAction> UpdateAsync(LegendaryAction entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Consumable> DeleteAsync(int id)
+    public Task<LegendaryAction> DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }

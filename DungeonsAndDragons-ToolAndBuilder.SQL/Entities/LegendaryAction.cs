@@ -2,7 +2,7 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class LegendaryActions : IEntity<int>
+public class LegendaryAction : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }
