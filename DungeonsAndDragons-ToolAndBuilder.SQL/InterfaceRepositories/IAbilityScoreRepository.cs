@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface ITraitRepository : IRepository<Trait, int>
+public interface IAbilityScoreRepository : IRepository<AbilityScore, int>
 {
     
 }

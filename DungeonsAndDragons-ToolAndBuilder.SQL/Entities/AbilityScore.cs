@@ -2,7 +2,7 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Ability : IEntity<int>
+public class AbilityScore : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }

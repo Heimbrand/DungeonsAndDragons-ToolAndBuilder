@@ -2,17 +2,11 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Class : IEntity<int>
-{ 
+public class RacialTraits : IEntity<int>
+{
+    // can be spells, immunities, proficiencies, etc.
     public int Id { get; set; }
-    public int CharacterId { get; set; }
-    public int NpcId { get; set; }
+    public int RaceId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-
-
-
-
-  
-
 }

@@ -4,7 +4,7 @@ namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
 public class Skill : IEntity<int>
 {
-    // What is the purpose of this class?
+    // Acrobatics, Animal Handling, Arcana, Athletics, Deception, History, Insight, Intimidation etc...
 
 
     public int Id { get; set; }
@@ -13,4 +13,5 @@ public class Skill : IEntity<int>
     public int NpcId { get; set; }
     public string Name { get; set; } = default!;
     public int Bonus { get; set; }
+    public string Modifier { get; set; } 
 }

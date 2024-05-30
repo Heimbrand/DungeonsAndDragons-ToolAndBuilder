@@ -13,15 +13,12 @@ public class Monster : IEntity<int>
     public string? Description { get; set; }
 
 
-    public List<Trait> Traits { get; set; } 
+    public List<MonsterTrait> Traits { get; set; }
     public List<Tag> MonsterTags { get; set; }
-    public List<Ability> Abilities { get; set; }
-    public List<Ability> SavingThrows { get; set; }
-    public List<Condition> ConditionImmunities { get; set; }
-    public List<DamageType> DamageVulnerabilities { get; set; }
-    public List<DamageType> DamageResistances { get; set; }
-    public List<DamageType> DamageImmunities { get; set; }
-    public List<Alignment> Alignments { get; set; }
+    public AbilityScore AbilitiesScores { get; set; }
+    public List<Condition> Conditions { get; set; }
+    public List<DamageType> DamageTypes { get; set; }
+    public Alignment Alignment { get; set; }
     public List<Sense> Senses { get; set; }
     public List<Skill> Skills { get; set; }
     public List<Reaction> Reactions { get; set; }
