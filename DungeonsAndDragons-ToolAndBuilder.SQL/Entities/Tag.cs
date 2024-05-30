@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Tag
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Tag : IEntity<int>
 {
     public int Id { get; set; }
     public int WorldId { get; set; } 

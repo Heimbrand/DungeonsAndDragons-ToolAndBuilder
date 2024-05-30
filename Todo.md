@@ -7,7 +7,7 @@
 * create race class
 
 
- ## Entities not yet cheched through
+ ## Entities not yet checked 
 * Condition
 * Class
 * character

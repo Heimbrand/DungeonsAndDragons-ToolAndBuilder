@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class SubClass
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class SubClass : IEntity<int>
 {
-    
+    public int Id { get; set ; }
 }

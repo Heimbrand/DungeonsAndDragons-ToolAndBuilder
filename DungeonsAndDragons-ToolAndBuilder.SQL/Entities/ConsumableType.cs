@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class ConsumableType
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class ConsumableType : IEntity<int>
 {
     public int Id { get; set; }
     public int ConsumableId { get; set; }

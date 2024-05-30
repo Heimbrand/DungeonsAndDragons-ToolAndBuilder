@@ -1,27 +1,22 @@
-# Clean code
+# Clean Code
 
+* Easy to read
+* Easy to extend
+* Reusable
+* Sustainable, doesn't crash unexpectedly
 
-* Lätt att läsa,
-* Lätt att utöka,
-* Återanvändbar,
-* Hållbar, krashar inte på oväntade ställen
+# Code Smell/!Clean Code
 
+* Unclear code
+* Unnecessarily complex
+* Crashes unexpectedly
+* Code that does things it shouldn't
 
-# Code Smell/!Clean code
+# SOLID
 
-
-* Otydlig kod,
-* Onödigt komplex,
-* Krashar på oväntade ställen,
-* Kod som gör saker den inte skall
-
-
-
-# Solid
-
-* Single responsibility principle = En klass, en uppgift. Datatransfer limited to purpose.
-* Open/Closed proinciple = För att förändra eller utöka en klass ska vi aldrig ändra i den klassen, utan skapa en ny.
-* Liskovs substitution principle,
-* Interface segregation principle,
-* Dependency inversion principle
+* **Single Responsibility Principle** = A class, a task. Data transfer limited to purpose.
+* **Open/Closed Principle** = To change or extend a class, we should never modify that class, but create a new one.
+* **Liskov Substitution Principle**
+* **Interface Segregation Principle**
+* **Dependency Inversion Principle**
 

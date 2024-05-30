@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class SubRace
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class SubRace : IEntity<int>
 {
-    
+    public int Id { get; set; }
 }

@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class WeaponType
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class WeaponType : IEntity<int>
 {
     // blunt, piercing, slashing
 

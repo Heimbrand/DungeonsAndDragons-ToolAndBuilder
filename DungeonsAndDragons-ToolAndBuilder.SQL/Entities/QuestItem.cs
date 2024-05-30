@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class QuestItem
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class QuestItem : IEntity<int>
 {
     public int Id { get; set; }
     public string Name { get; set; } = default!;

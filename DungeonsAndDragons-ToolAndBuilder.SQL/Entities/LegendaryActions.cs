@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class LegendaryActions
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class LegendaryActions : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }

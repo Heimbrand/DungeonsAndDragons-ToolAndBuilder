@@ -1,7 +1,9 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Crafting
-{
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Crafting : IEntity<int>
+{ 
     // Unclear if this will be used, but it's here just in case.
 
     public int Id { get; set; }

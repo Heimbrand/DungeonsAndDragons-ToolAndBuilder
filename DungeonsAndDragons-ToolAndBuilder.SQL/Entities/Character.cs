@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Character
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Character : IEntity<int>
 {
     public int Id { get; set; }
     public Guid CharacterGuid { get; set; }

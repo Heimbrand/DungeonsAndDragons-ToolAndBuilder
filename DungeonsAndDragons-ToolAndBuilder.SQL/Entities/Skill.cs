@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Skill
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Skill : IEntity<int>
 {
     // What is the purpose of this class?
 

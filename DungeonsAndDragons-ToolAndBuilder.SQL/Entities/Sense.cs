@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Sense
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Sense : IEntity<int>
 {
     //Special senses such as BlindSight, DarkVision, TremorSense, etc. See DndBeond for reference.
 

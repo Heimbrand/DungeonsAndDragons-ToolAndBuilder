@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class SideQuest
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class SideQuest : IEntity<int>
 {
     public int Id { get; set; }
     public string Name { get; set; } = default!;

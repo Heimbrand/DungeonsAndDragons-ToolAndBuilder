@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class GameAction
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class GameAction : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }

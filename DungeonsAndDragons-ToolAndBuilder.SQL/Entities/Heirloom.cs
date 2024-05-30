@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Heirloom
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Heirloom : IEntity<int>
 {
     public int Id { get; set; }
     public string Name { get; set; } = default!;

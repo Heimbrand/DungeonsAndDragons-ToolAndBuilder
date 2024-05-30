@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Size
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Size : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Faction
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Faction : IEntity<int>
 {
     public int Id { get; set; }
     public int CharacterId { get; set; }

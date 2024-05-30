@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class WeaponProperty
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class WeaponProperty : IEntity<int>
 {
     //Heavy, Two-Handed, Light, Finesse, Reach, Thrown, Ammunition, Loading, Special
 

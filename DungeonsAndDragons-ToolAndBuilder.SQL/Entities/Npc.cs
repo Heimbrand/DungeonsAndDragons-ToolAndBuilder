@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Npc
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Npc : IEntity<int>
 {
     public int Id { get; set; }
     public Guid NpcGuid { get; set; }

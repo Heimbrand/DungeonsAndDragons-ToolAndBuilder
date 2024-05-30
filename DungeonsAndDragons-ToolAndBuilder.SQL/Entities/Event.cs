@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Event
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Event : IEntity<int>
 {
     // Certain events/scenarios which the DM can plan out for the players to experience.
 

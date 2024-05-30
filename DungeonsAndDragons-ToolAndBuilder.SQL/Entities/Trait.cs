@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Trait
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Trait : IEntity<int>
 {
     // Special traits that are unique to that monster, character, or npc. See DnDBeoynd MonsterCards for reference.
     

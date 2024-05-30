@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Reaction
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Reaction : IEntity<int>
 {
     // Reactions are special actions that can be taken outside of a characters turn.
 

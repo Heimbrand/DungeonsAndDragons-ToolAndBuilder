@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class MagicalArtifact
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class MagicalArtifact : IEntity<int>
 {
     //Magical artifacts that arent weapons or armor, for exampel bag of holding, ring of invisibility, etc.
 

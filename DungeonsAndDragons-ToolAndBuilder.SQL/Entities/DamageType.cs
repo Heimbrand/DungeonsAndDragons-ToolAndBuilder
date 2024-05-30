@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class DamageType
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class DamageType : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
-public class Rarity
+namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+
+public class Rarity : IEntity<int>
 {
     public int Id { get; set; }
     public int WeaponId { get; set; }
