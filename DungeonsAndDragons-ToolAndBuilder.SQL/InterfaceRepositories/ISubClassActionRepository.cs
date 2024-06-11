@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface IRacialTraitsRepository : IRepository<RacialTraits, int>
+public interface ISubClassActionRepository : IRepository<SubClassAction, int>
 {
     
 }

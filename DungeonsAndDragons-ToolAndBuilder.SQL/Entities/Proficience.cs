@@ -2,18 +2,14 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class SubRace : IEntity<int>
+public class Proficience : IEntity<int>
 {
     public int Id { get; set; }
+    public int ClassId { get; set; }
+    public int SubClassId { get; set; }
     public int RaceId { get; set; }
+    public int SubRaceId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-    public string SubRaceImg { get; set; }
 
-
-    public AbilityScoreModifier AbilityScoreModifier { get; set; }
-    public SubRaceAction SubRaceActions { get; set; }
-
-    public ICollection<Proficience> Proficiencies { get; set; }
-   
 }

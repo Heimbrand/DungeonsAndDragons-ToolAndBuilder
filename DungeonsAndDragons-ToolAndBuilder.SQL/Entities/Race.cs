@@ -9,8 +9,13 @@ public class Race : IEntity<int>
     public int NpcId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
+    public string RaceImg { get; set; }
     public string? Speed { get; set; }
+
+    public SubRace SubRace { get; set; }
     public AbilityScoreModifier AbilityScoreModifier { get; set; }
-    public RacialTraits RacialTraits { get; set; }
+    public RaceAction RaceActions { get; set; }
+    public ICollection<Proficience> Proficiencies { get; set; }
+   
 }
 

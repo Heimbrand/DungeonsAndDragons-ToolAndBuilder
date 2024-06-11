@@ -7,6 +7,8 @@ public class AbilityScoreModifier : IEntity<int>
     public int Id { get; set; }
     public int RaceId { get; set; }
     public int SubRaceId { get; set; }
+    public int ClassId { get; set; }
+    public int SubClassId { get; set; }
 
     public int Strength { get; set; }
     public int Dexterity { get; set; }

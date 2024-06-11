@@ -8,7 +8,9 @@ public class Character : IEntity<int>
     public Guid CharacterGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
+    public string? CharacterImg { get; set; }
     public int? ArmorClass { get; set; }
+    public int? Initiative { get; set; }
 
     public Race Race { get; set; }
     public SubRace? SubRace { get; set; }
