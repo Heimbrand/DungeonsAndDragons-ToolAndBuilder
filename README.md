@@ -19,47 +19,53 @@ New project, working on the design of the databases.
 ### Tables/Collections
 
 * ApplicationUser - SQL
-* Characters - SQL
-* Classes - SQL
-* Consumables - SQL
-* Crafting (Work in progress) - SQL
-* Events - SQL
-* Factions - SQL
-* GameActions - SQL
-* Gear - SQL
-* Heirlooms - SQL
-* Locations - SQL
-* Magical artifacts - SQL
-* MiscellaneousItems - SQL
-* Monster - SQL
-* Npc's - SQL
-* Quest items - SQL
-* Sidequests - SQL
-* Subclasses - SQL
-* SubRaces - SQL
-* Tag - SQL
-* Weapons - SQL
-* WeaponProperty - SQL
-* Worlds - SQL
-* LegendaryActions - SQL
-* Type - SQL
-* Alignments - SQL
-* Reaction - SQL
-* Skill - SQL
-* Size - SQL
-* DamageType - SQL
-* Condition - SQL
-* Sense - SQL
+* AbilityScoreModifier - SQL
+* Alignment - SQL
+* Armor - SQL
 * Challenge - SQL
+* Character - SQL
+* Class - SQL
+* ClassAction - SQL
+* Condition - SQL
+* Consumable - SQL
+* ConsumableType - SQL
+* Crafting (Work in progress) - SQL
+* DamageType - SQL
+* Event - SQL
+* Faction - SQL
+* GameAction - SQL
+* Heirloom - SQL
 * Language - SQL
+* LegendaryAction - SQL
+* Location - SQL
+* Magical artifact - SQL
+* MiscellaneousItem - SQL
+* Monster - SQL
+* MonsterTrait - SQL
+* Npc - SQL
+* Proficience - SQL
+* Quest item - SQL
+* Race - SQL
+* RaceAction - SQL
+* Rarity - SQL
+* Reaction - SQL
+* Sense - SQL
+* Sidequests - SQL
+* Size - SQL
+* Skill - SQL
+* Subclasses - SQL
+* SubClassAction - SQL
+* SubRace - SQL
+* SubRaceAction - SQL
+* Tag - SQL
+* Type - SQL
+* Weapon - SQL
+* WeaponProperty - SQL
 * WeaponType - SQL
-* Ability - SQL
-* Trait - SQL
-
-
+* Worlds - SQL
 * Inventory - MongoDb
 * InventoryItems - MongoDb
-  
+
   ---
 
 ### Features
