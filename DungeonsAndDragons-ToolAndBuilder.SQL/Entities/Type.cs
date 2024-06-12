@@ -6,5 +6,7 @@ public class Type : IEntity<int>
 {
     public int Id { get; set; }
     public int MonsterId { get; set; }
+    public string Name { get; set; } = default!;
+    public string? Description { get; set; }
 
 }

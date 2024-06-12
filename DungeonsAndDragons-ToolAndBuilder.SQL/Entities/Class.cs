@@ -13,7 +13,6 @@ public class Class : IEntity<int>
     public string? HitDice { get; set; }
 
     public SubClass? SubClass { get; set; }
-    public AbilityScoreModifier AbilityScoreModifier { get; set; }
     public ClassAction ClassActions { get; set; }
     public ICollection<Proficience> Proficiencies { get; set; }
     

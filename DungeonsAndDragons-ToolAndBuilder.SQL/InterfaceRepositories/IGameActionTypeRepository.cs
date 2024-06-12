@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface IAbilityScoreModifierRepository : IRepository<AbilityScoreModifier, int>
+public interface IGameActionTypeRepository : IRepository<GameActionType, int>
 {
     
 }

@@ -10,7 +10,7 @@ public class SubClass : IEntity<int>
     public string? Description { get; set; }
     public string? SubClassImg { get; set; }
 
-    public AbilityScoreModifier AbilityScoreModifier { get; set; }
+    
     public SubClassAction SubClassActions { get; set; }
 
     public ICollection<Proficience> Proficiencies { get; set; }

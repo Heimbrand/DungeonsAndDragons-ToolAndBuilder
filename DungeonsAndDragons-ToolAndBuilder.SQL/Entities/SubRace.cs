@@ -11,9 +11,7 @@ public class SubRace : IEntity<int>
     public string SubRaceImg { get; set; }
 
 
-    public AbilityScoreModifier AbilityScoreModifier { get; set; }
     public SubRaceAction SubRaceActions { get; set; }
-
     public ICollection<Proficience> Proficiencies { get; set; }
    
 }

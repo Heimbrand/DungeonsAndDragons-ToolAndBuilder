@@ -11,22 +11,23 @@ public class Monster : IEntity<int>
     public string? HitDice { get; set; }
     public string? Speed { get; set; }
     public string? Description { get; set; }
+    public int ChallengeRating { get; set; }
+    public int ExperiencePoints { get; set; }
 
-
-    public List<MonsterTrait> Traits { get; set; }
-    public List<Tag> MonsterTags { get; set; }
-    public AbilityScore AbilitiesScores { get; set; }
-    public List<Condition> Conditions { get; set; }
-    public List<DamageType> DamageTypes { get; set; }
     public Alignment Alignment { get; set; }
-    public List<Sense> Senses { get; set; }
-    public List<Skill> Skills { get; set; }
-    public List<Reaction> Reactions { get; set; }
-    public List<GameAction> Actions { get; set; }
-    public List<LegendaryAction> LegendaryActions { get; set; }
-    public List<Language> Languages { get; set; }
     public Type Type { get; set; }
     public Size Size { get; set; }
-    public Challenge Challenge { get; set; }
     public Faction? Faction { get; set; }
+
+    public ICollection<MonsterTrait> Traits { get; set; }
+    public ICollection<Tag> MonsterTags { get; set; }
+    public ICollection<Condition> Conditions { get; set; }
+    public ICollection<DamageType> DamageTypes { get; set; }
+    public ICollection<Sense> Senses { get; set; }
+    public ICollection<Skill> Skills { get; set; }
+    public ICollection<Reaction> Reactions { get; set; }
+    public ICollection<GameAction> Actions { get; set; }
+    public ICollection<Language> Languages { get; set; }
+
+   
 }

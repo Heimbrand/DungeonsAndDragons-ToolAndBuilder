@@ -3,34 +3,34 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class AbilityScoreScoreRepository : IAbilityScoreRepository
+public class GameActionTypeRepository : IGameActionTypeRepository
 {
-    public Task<AbilityScore> GetByIdAsync(int id)
+    public Task<GameActionType> AddAsync(GameActionType entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<AbilityScore>> GetAllAsync()
+    public Task<GameActionType> DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<AbilityScore>> GetMany(int start, int count)
+    public Task<IEnumerable<GameActionType>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<AbilityScore> AddAsync(AbilityScore entity)
+    public Task<GameActionType> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<AbilityScore> UpdateAsync(AbilityScore entity)
+    public Task<IEnumerable<GameActionType>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<AbilityScore> DeleteAsync(int id)
+    public Task<GameActionType> UpdateAsync(GameActionType entity)
     {
         throw new NotImplementedException();
     }
