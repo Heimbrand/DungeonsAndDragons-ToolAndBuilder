@@ -13,7 +13,7 @@ public class Race : IEntity<int>
     public string? Speed { get; set; }
 
  
-    public RaceAction RaceActions { get; set; }
+
     public ICollection<Proficience> Proficiencies { get; set; }
    
 }

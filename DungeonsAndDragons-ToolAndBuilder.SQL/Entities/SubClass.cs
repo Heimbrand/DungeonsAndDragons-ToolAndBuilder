@@ -12,7 +12,7 @@ public class SubClass : IEntity<int>
     public string? SubClassImg { get; set; }
 
     
-    public SubClassAction? SubClassActions { get; set; }
+   
     public ICollection<SubClassFeature>? SubClassFeatures { get; set; }
     public ICollection<Proficience>? Proficiencies { get; set; }
     

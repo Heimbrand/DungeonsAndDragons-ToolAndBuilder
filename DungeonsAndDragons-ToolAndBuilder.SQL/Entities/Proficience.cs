@@ -11,6 +11,6 @@ public class Proficience : IEntity<int>
     public int SubRaceId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-    public string? Prerequisite { get; set; } // i.e. "Dwarf"
+    public string? Prerequisite { get; set; } // i.e. "Dwarf", "Elf", "Fighter", "Rogue", etc.
 
 }

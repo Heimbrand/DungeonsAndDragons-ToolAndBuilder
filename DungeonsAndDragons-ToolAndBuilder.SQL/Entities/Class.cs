@@ -11,7 +11,7 @@ public class Class : IEntity<int>
     public string? Description { get; set; }
     public string? ClassImg { get; set; }
 
-    public ClassAction ClassActions { get; set; }
+  
     public ICollection<ClassFeature>? ClassFeatures { get; set; }
     public ICollection<Proficience>? Proficiencies { get; set; }
 
