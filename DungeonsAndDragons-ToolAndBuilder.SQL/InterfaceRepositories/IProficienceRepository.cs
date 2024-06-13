@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface IProficienceRepository : IRepository<Proficience, int>
+public interface IProficienceRepository : IRepository<Proficiency, int>
 {
     
 }

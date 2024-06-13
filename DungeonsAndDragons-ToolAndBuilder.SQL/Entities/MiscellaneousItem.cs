@@ -8,7 +8,7 @@ public class MiscellaneousItem : IEntity<int>
     public Guid MiscellaneousItemGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-    public string? Weight { get; set; }
+    public double? Weight { get; set; }
     
 
 }

@@ -14,7 +14,7 @@ public class SubClass : IEntity<int>
     
    
     public ICollection<SubClassFeature>? SubClassFeatures { get; set; }
-    public ICollection<Proficience>? Proficiencies { get; set; }
+    public ICollection<Proficiency>? Proficiencies { get; set; }
     
 
 

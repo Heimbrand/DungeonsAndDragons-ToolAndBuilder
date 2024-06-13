@@ -13,7 +13,7 @@ public class Class : IEntity<int>
 
   
     public ICollection<ClassFeature>? ClassFeatures { get; set; }
-    public ICollection<Proficience>? Proficiencies { get; set; }
+    public ICollection<Proficiency>? Proficiencies { get; set; }
 
     
 }

@@ -2,11 +2,11 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class SubClassFeature : IEntity<int>
+public class MonsterType : IEntity<int>
 {
     public int Id { get; set; }
-    public int SubClassId { get; set; }
-    public string SubClassName { get; set; } = default!;
+    public int MonsterId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
+
 }

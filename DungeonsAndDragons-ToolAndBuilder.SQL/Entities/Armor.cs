@@ -11,7 +11,7 @@ public class Armor : IEntity<int>
     public string? Description { get; set; }
     public int ArmorClass { get; set; }
     public double? Weight { get; set; }
-    public string? Cost { get; set; }
+    public double? Cost { get; set; }
     public string? Rarity { get; set; }
     public string? MagicalEffects { get; set; }
 

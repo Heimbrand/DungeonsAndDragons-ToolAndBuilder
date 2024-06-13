@@ -5,19 +5,24 @@ namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 public class Tag : IEntity<int>
 {
     public int Id { get; set; }
-    public int WorldId { get; set; } 
-    public int CharacterId { get; set; } 
-    public int MonsterId { get; set; } 
-    public int NpcId { get; set; } 
-    public int WeaponId { get; set; } 
-    public int QuestItemId { get; set; }
+    public int WorldId { get; set; }
+    public int CharacterId { get; set; }
+    public int NpcId { get; set; }
+    public int ClassId { get; set; }
+    public int SubClassId { get; set; }
+    public int RaceId { get; set; }
+    public int SubRaceId { get; set; }
+    public int MonsterId { get; set; }
     public int SideQuestId { get; set; }
-    public int MiscellaneousItemId { get; set; } 
-    public int HeirloomId { get; set; }
-    public int MagicalArtifactId { get; set; }
-    public int ArmorId { get; set; }
     public int EventId { get; set; }
-    public int ConsumableId { get; set; }
+    public int FactionId { get; set; }
+    public int AlignmentId { get; set; }
+    public int SizeId { get; set; }
+    public int ConditionId { get; set; }
+    public int DamageTypeId { get; set; }
+    public int GameActionId { get; set; }
+    public int CraftingId { get; set; }
+    public int LocationId { get; set; }
     public string Name { get; set; } = default!;
-    
+
 }

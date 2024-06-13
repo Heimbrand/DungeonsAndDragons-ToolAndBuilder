@@ -15,7 +15,7 @@ public class Monster : IEntity<int>
     public int ExperiencePoints { get; set; }
 
     public Alignment Alignment { get; set; }
-    public Type Type { get; set; }
+    public MonsterType MonsterType { get; set; }
     public Size Size { get; set; }
     public Faction? Faction { get; set; }
 

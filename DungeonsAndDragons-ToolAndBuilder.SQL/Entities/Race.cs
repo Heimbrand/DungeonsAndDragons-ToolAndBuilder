@@ -10,11 +10,11 @@ public class Race : IEntity<int>
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string RaceImg { get; set; }
-    public string? Speed { get; set; }
+    
 
  
 
-    public ICollection<Proficience> Proficiencies { get; set; }
+    public ICollection<Proficiency> Proficiencies { get; set; }
     public ICollection<RacialTrait> RacialTraits { get; set; }
 
 }

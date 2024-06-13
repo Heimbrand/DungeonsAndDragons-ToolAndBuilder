@@ -2,7 +2,7 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Proficience : IEntity<int>
+public class Proficiency : IEntity<int>
 {
     public int Id { get; set; }
     public int ClassId { get; set; }
@@ -12,6 +12,9 @@ public class Proficience : IEntity<int>
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public int SkillBonus { get; set; }
+    public string? RelatedAbilityScoreBonus { get; set; } // i.e. Dexterity
+
+    public ProficiencyType ProficiencyType { get; set; }
 
 
 }

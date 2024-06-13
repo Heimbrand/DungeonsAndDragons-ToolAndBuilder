@@ -9,7 +9,7 @@ public class Event : IEntity<int>
     public int Id { get; set; }
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
-    public string? ImageUrl { get; set; }
-    public List<Tag> EventTags { get; set; } 
+    public string? EventImg { get; set; }
+    public ICollection<Tag>? EventTags { get; set; } 
 
 }

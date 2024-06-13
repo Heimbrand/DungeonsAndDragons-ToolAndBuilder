@@ -9,6 +9,6 @@ public class SideQuest : IEntity<int>
     public string? Description { get; set; } 
     public string? Reward { get; set; } 
     public int? RecommendedLevel { get; set; }
-    public List<Tag>? Tags { get; set; } 
+    public ICollection<Tag>? Tags { get; set; } 
 
 }

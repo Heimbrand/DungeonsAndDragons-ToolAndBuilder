@@ -3,34 +3,34 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class TypeRepository : ITypeRepository
+public class ProficiencyTypeRepository : IProficiencyTypeRepository
 {
-    public Task<MonsterType> GetByIdAsync(int id)
+    public Task<ProficiencyType> AddAsync(ProficiencyType entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<MonsterType>> GetAllAsync()
+    public Task<ProficiencyType> DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<MonsterType>> GetMany(int start, int count)
+    public Task<IEnumerable<ProficiencyType>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<MonsterType> AddAsync(MonsterType entity)
+    public Task<ProficiencyType> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<MonsterType> UpdateAsync(MonsterType entity)
+    public Task<IEnumerable<ProficiencyType>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<MonsterType> DeleteAsync(int id)
+    public Task<ProficiencyType> UpdateAsync(ProficiencyType entity)
     {
         throw new NotImplementedException();
     }

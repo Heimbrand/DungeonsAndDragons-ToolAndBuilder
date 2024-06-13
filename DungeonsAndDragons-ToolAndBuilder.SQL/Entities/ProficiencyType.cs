@@ -2,11 +2,9 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Type : IEntity<int>
+public class ProficiencyType : IEntity<int>
 {
     public int Id { get; set; }
-    public int MonsterId { get; set; }
+    public int ProficiencyId { get; set; }
     public string Name { get; set; } = default!;
-    public string? Description { get; set; }
-
 }

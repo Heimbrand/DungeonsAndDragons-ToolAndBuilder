@@ -5,32 +5,32 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
 public class ProficienceRepository : IProficienceRepository
 {
-    public Task<Proficience> AddAsync(Proficience entity)
+    public Task<Proficiency> AddAsync(Proficiency entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Proficience> DeleteAsync(int id)
+    public Task<Proficiency> DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Proficience>> GetAllAsync()
+    public Task<IEnumerable<Proficiency>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<Proficience> GetByIdAsync(int id)
+    public Task<Proficiency> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Proficience>> GetMany(int start, int count)
+    public Task<IEnumerable<Proficiency>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Proficience> UpdateAsync(Proficience entity)
+    public Task<Proficiency> UpdateAsync(Proficiency entity)
     {
         throw new NotImplementedException();
     }

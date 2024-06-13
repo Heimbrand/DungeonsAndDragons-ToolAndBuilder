@@ -12,4 +12,6 @@ public class Faction : IEntity<int>
     public string Description { get; set; } = default!;
     public string? ImageUrl { get; set; }
 
+    public ICollection<Tag>? FactionTags { get; set; }
+
 }
