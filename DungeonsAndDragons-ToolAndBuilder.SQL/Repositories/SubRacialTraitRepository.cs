@@ -3,34 +3,34 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class GameActionTypeRepository : IGameActionTypeRepository
+public class SubRacialTraitRepository : ISubRacialTraitRepository
 {
-    public Task<GameActionType> AddAsync(GameActionType entity)
+    public Task<SubRacialTrait> AddAsync(SubRacialTrait entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<GameActionType> DeleteAsync(int id)
+    public Task<SubRacialTrait> DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<GameActionType>> GetAllAsync()
+    public Task<IEnumerable<SubRacialTrait>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<GameActionType> GetByIdAsync(int id)
+    public Task<SubRacialTrait> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<GameActionType>> GetMany(int start, int count)
+    public Task<IEnumerable<SubRacialTrait>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<GameActionType> UpdateAsync(GameActionType entity)
+    public Task<SubRacialTrait> UpdateAsync(SubRacialTrait entity)
     {
         throw new NotImplementedException();
     }

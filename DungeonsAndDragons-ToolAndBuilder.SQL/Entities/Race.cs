@@ -15,6 +15,7 @@ public class Race : IEntity<int>
  
 
     public ICollection<Proficience> Proficiencies { get; set; }
-   
+    public ICollection<RacialTrait> RacialTraits { get; set; }
+
 }
 

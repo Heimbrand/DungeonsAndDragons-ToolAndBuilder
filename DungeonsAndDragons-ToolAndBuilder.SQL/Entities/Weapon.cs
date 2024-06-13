@@ -5,6 +5,7 @@ namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 public class Weapon : IEntity<int>
 {
     public int Id { get; set; }
+    public Guid WeaponGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Damage { get; set; } 
     public double? Weight { get; set; } 
@@ -13,11 +14,5 @@ public class Weapon : IEntity<int>
     public string? Properties { get; set; } // light, finesse, thrown, two-handed, versatile, ammunition, heavy, reach, loading, special
     public string? WeaponType { get; set; } // simple, martial, ranged, melee
     public string? Rarity { get; set; } // common, uncommon, rare, very rare, legendary
-
-
-
-    public ICollection<Tag>? WeaponTags { get; set; }
-
-
 
 }

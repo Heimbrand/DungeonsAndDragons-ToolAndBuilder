@@ -6,12 +6,13 @@ public class Armor : IEntity<int>
 {
     public int Id { get; set; }
     public Guid ArmorGuid { get; set; }
+    public string? ArmorImg { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public int ArmorClass { get; set; }
     public double? Weight { get; set; }
     public string? Cost { get; set; }
-    public List<Tag>? ArmorTags { get; set; }
-    public Rarity? Rarity { get; set; }
+    public string? Rarity { get; set; }
+    public string? MagicalEffects { get; set; }
 
 }

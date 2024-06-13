@@ -2,13 +2,11 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class MiscellaneousItem : IEntity<int>
+public class SubRacialTrait : IEntity<int>
 {
     public int Id { get; set; }
-    public Guid MiscellaneousItemGuid { get; set; }
+    public int SubRaceId { get; set; }
+    public string SubRaceName { get; set; } = default!;
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-    public string? Weight { get; set; }
-    
-
 }
