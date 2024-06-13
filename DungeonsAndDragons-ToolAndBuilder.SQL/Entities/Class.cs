@@ -10,10 +10,10 @@ public class Class : IEntity<int>
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? ClassImg { get; set; }
-    public string? HitDice { get; set; }
 
-    public SubClass? SubClass { get; set; }
     public ClassAction ClassActions { get; set; }
-    public ICollection<Proficience> Proficiencies { get; set; }
+    public ICollection<ClassFeature>? ClassFeatures { get; set; }
+    public ICollection<Proficience>? Proficiencies { get; set; }
+
     
 }

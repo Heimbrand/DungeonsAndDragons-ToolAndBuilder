@@ -6,7 +6,9 @@
 * Create Abstract BaseDocument where IEntity<string>, annotations for defining PK
 * Deal with nullable warnings before migrations
 * Change all lists to ICollections
-* find out a way to manage ability scores modifiers. (DataAccess proj for engine)
+* class feature
+* class proficiencies
+
 
 
 ## Potential TODO

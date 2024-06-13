@@ -12,7 +12,7 @@ public class Race : IEntity<int>
     public string RaceImg { get; set; }
     public string? Speed { get; set; }
 
-    public SubRace SubRace { get; set; }
+ 
     public RaceAction RaceActions { get; set; }
     public ICollection<Proficience> Proficiencies { get; set; }
    
