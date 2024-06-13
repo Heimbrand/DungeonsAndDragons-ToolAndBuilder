@@ -6,7 +6,9 @@ namespace DungeonsAndDragons_ToolAndBuilder.Shared.Collections;
 public class Inventory
 {
     public ObjectId Id { get; set; }
-    public Guid CharacterId { get; set; }
-    public Guid NpcId { get; set; }
+    public string Name { get; set; }
+    public int MaxWeight { get; set; }
+    public int CurrentWeight { get; set; }
+    public string InventoryImg { get; set; }
 
 }
