@@ -47,7 +47,7 @@ public class Character : IEntity<int>
     public ICollection<Sense>? Senses { get; set; }
     public ICollection<DamageType>? DamageTypes { get; set; } //resistances, immunities, vulnerabilities
     public ICollection<Reaction>? Reactions { get; set; }
-    public ICollection<GameAction>? Actions { get; set; } // default actions, the class and race will add more
+    public ICollection<GameAction>? Actions { get; set; } 
 
 
 }

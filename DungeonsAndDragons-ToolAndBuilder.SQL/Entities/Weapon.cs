@@ -7,11 +7,17 @@ public class Weapon : IEntity<int>
     public int Id { get; set; }
     public string Name { get; set; } = default!;
     public string? Damage { get; set; } 
-    public string? Weight { get; set; } 
-    public string? Cost { get; set; } 
-   public List<Tag> WeaponTags { get; set; } 
-    public List<WeaponProperty>? Properties { get; set; }
-    public DamageType? DamageType { get; set; }
-    public Rarity? Rarity { get; set; }
-    public WeaponType? WeaponType { get; set; }
+    public double? Weight { get; set; } 
+    public double? Cost { get; set; }
+    public string? DamageType { get; set; } // bludgeoning, piercing, slashing
+    public string? Properties { get; set; } // light, finesse, thrown, two-handed, versatile, ammunition, heavy, reach, loading, special
+    public string? WeaponType { get; set; } // simple, martial, ranged, melee
+    public string? Rarity { get; set; } // common, uncommon, rare, very rare, legendary
+
+
+
+    public ICollection<Tag>? WeaponTags { get; set; }
+
+
+
 }

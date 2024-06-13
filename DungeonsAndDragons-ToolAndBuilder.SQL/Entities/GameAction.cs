@@ -8,10 +8,6 @@ public class GameAction : IEntity<int>
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }
-    public int ClassActionId { get; set; }
-    public int SubClassActionId { get; set; }
-    public int RaceActionId { get; set; }
-    public int SubRaceActionId { get; set; }
 
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
@@ -19,13 +15,13 @@ public class GameAction : IEntity<int>
     public string? ActionImg { get; set; }
 
     public bool IsLegendary { get; set; }
-   public bool IsClassSpecific { get; set; }
+    public bool IsClassSpecific { get; set; }
     public bool IsSubClassSpecific { get; set; }
     public bool IsRaceSpecific { get; set; }
     public bool IsSubRaceSpecific { get; set; }
     public bool IsMonsterSpecific { get; set; }
     public bool IsNpcSpecific { get; set; } //Potential homebrew stuff
-    
 
-    public GameActionType GameActionType { get; set; } 
+
+
 }
