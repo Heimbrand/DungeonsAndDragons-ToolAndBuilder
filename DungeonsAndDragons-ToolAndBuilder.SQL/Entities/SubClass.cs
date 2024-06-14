@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class SubClass : IEntity<int>
+public class SubClass : BaseEntity
 {
-    public int Id { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }
     public string Name { get; set; } = default!;

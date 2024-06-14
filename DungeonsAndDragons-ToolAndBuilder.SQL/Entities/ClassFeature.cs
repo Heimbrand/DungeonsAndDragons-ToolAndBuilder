@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class ClassFeature : IEntity<int>
+public class ClassFeature : BaseEntity
 {
-    public int Id { get; set; }
     public int ClassId { get; set; }
     public int LevelRequirement { get; set; }
     public string ClassName { get; set; } = default!;

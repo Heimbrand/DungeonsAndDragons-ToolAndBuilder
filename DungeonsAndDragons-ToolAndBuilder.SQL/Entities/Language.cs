@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Language : IEntity<int>
+public class Language : BaseEntity
 {
-    public int Id { get; set; }
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }

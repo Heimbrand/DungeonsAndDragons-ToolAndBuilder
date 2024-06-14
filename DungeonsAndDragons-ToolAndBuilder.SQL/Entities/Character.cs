@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Character : IEntity<int>
+public class Character : BaseEntity
 {
-    public int Id { get; set; }
     public Guid CharacterGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }

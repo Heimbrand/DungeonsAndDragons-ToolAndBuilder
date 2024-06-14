@@ -2,11 +2,9 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Sense : IEntity<int>
+public class Sense : BaseEntity
 {
     //Special senses such as BlindSight, DarkVision, TremorSense, etc. See DndBeyond for reference.
-
-    public int Id { get; set; }
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }

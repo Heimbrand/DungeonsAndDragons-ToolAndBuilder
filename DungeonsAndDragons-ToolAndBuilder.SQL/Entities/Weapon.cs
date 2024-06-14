@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Weapon : IEntity<int>
+public class Weapon : BaseEntity
 {
-    public int Id { get; set; }
     public Guid WeaponGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Damage { get; set; } 

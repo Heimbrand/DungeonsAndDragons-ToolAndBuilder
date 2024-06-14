@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Monster : IEntity<int>
+public class Monster : BaseEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; } = default!;
     public int? ArmorClass { get; set; }
     public int? HitPoints { get; set; }

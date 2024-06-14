@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Faction : IEntity<int>
+public class Faction : BaseEntity
 {
-    public int Id { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }
     public int MonsterId { get; set; }

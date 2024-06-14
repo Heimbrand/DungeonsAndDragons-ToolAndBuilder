@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class ProficiencyType : IEntity<int>
+public class ProficiencyType : BaseEntity
 {
-    public int Id { get; set; }
     public int ProficiencyId { get; set; }
     public string Name { get; set; } = default!;
 }

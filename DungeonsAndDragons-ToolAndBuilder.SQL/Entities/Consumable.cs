@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Consumable : IEntity<int>
+public class Consumable : BaseEntity
 {
-    public int Id { get; set; }
     public Guid ConsumableGuid { get; set; }
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;

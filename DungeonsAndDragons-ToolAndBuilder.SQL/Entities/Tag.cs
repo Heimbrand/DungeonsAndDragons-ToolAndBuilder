@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Tag : IEntity<int>
+public class Tag : BaseEntity
 {
-    public int Id { get; set; }
     public int WorldId { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }

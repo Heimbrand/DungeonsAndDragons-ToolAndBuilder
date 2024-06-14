@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class SubRacialTrait : IEntity<int>
+public class SubRacialTrait : BaseEntity
 {
-    public int Id { get; set; }
     public int SubRaceId { get; set; }
     public string SubRaceName { get; set; } = default!;
     public string Name { get; set; } = default!;

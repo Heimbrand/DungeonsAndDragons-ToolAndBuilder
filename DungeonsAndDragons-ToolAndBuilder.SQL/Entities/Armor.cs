@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Armor : IEntity<int>
+public class Armor : BaseEntity
 {
-    public int Id { get; set; }
     public Guid ArmorGuid { get; set; }
     public string? ArmorImg { get; set; }
     public string Name { get; set; } = default!;

@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class QuestItem : IEntity<int>
+public class QuestItem : BaseEntity
 {
-    public int Id { get; set; }
     public Guid QuestItemGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }

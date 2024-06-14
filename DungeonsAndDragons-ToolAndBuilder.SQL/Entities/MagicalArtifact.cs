@@ -2,11 +2,10 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class MagicalArtifact : IEntity<int>
+public class MagicalArtifact : BaseEntity
 {
     //Magical artifacts that arent weapons or armor, for exampel bag of holding, ring of invisibility, etc.
 
-    public int Id { get; set; }
     public Guid MagicalArtifactGuid { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
