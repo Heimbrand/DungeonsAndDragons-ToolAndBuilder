@@ -2,9 +2,8 @@
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class Class : IEntity<int>
+public class Class : BaseEntity
 {
-    public int Id { get; set; }
     public int CharacterId { get; set; }
     public int NpcId { get; set; }
     public string Name { get; set; } = default!;
@@ -15,5 +14,4 @@ public class Class : IEntity<int>
     public ICollection<ClassFeature>? ClassFeatures { get; set; }
     public ICollection<Proficiency>? Proficiencies { get; set; }
 
-    
 }

@@ -3,9 +3,8 @@ using MongoDB.Bson;
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Collections;
 
-public class Inventory
+public class Inventory : BaseDocument
 {
-    public ObjectId Id { get; set; }
     public string Name { get; set; }
     public int MaxWeight { get; set; }
     public int CurrentWeight { get; set; }

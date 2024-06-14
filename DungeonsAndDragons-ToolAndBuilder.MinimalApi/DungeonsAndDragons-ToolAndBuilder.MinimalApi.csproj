@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazorise.Bootstrap" Version="1.5.2" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
   </ItemGroup>
 
   <ItemGroup>

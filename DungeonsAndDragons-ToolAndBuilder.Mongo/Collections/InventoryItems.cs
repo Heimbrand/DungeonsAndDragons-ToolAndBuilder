@@ -1,6 +1,6 @@
 ﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Collections;
 
-public class InventoryItems
+public class InventoryItems : BaseDocument
 {
     
 }
