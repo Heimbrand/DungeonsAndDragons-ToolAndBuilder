@@ -16,9 +16,4 @@
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="InterfaceRepositories\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
