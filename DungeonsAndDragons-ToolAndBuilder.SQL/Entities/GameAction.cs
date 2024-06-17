@@ -24,7 +24,7 @@ public class GameAction : BaseEntity
     public bool IsNpcSpecific { get; set; } //Potential homebrew stuff
     public bool IsStandardAction { get; set; }
 
-    public ICollection<Tag> GameActionTags { get; set; }
+    public ICollection<Tag>? GameActionTags { get; set; }
 
 
 }

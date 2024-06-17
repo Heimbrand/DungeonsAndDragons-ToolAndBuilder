@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.Mongo\DungeonsAndDragons-ToolAndBuilder.Mongo.csproj" />
     <ProjectReference Include="..\DungeonsAndDragons-ToolAndBuilder.SQL\DungeonsAndDragons-ToolAndBuilder.SQL.csproj" />
   </ItemGroup>

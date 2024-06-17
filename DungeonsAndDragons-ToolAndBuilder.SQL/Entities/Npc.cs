@@ -16,14 +16,14 @@ public class Npc : BaseEntity
     public int? Wisdom { get; set; }
     public int? Charisma { get; set; }
 
-    public Race Race { get; set; }
+    public Race Race { get; set; } = default!;
     public SubRace? SubRace { get; set; }
     public Class Class { get; set; } = default!;
     public SubClass? SubClass { get; set; }
 
   
-    public Alignment Alignment { get; set; }
-    public Size Size { get; set; }
+    public Alignment? Alignment { get; set; }
+    public Size? Size { get; set; }
     public Faction? Faction { get; set; }
 
     public ICollection<Tag> NpcTags { get; set; }

@@ -29,8 +29,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{33CC0C39-B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Shared", "DungeonsAndDragons-ToolAndBuilder.Shared\DungeonsAndDragons-ToolAndBuilder.Shared.csproj", "{94DD5231-AC73-4EF6-9D9D-15218E391691}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndDragons-ToolAndBuilder.Mud.Client", "DungeonsAndDragons-ToolAndBuilder.Mud.Client\DungeonsAndDragons-ToolAndBuilder.Mud.Client.csproj", "{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TODO", "TODO", "{2835585C-B431-46C0-B616-4F461CD44219}"
 	ProjectSection(SolutionItems) = preProject
 		CleanCode.md = CleanCode.md
@@ -71,10 +69,6 @@ Global
 		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94DD5231-AC73-4EF6-9D9D-15218E391691}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,7 +87,6 @@ Global
 		{CE4E6F32-633A-4B1F-BFB4-49D497F4F4B1} = {F1D687D8-188E-4F3C-A146-FBF750DA5D22}
 		{33CC0C39-BD30-469C-8CAB-7235246FE019} = {B8B9B500-DCB8-4B33-87FE-75C7640DF007}
 		{94DD5231-AC73-4EF6-9D9D-15218E391691} = {B57931E4-5143-409D-AD52-841103351766}
-		{61110449-6AEF-4F01-BEDB-BA8F5FAEBED1} = {475A76D2-0EBF-4A9E-A4D6-3971D2C55D83}
 		{B57931E4-5143-409D-AD52-841103351766} = {C602CFF3-E1E2-41F1-9180-111F9720262D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
