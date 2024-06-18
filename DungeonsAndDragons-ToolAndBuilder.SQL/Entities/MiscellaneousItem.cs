@@ -1,6 +1,4 @@
-﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
-
-namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
 public class MiscellaneousItem : BaseEntity
 {

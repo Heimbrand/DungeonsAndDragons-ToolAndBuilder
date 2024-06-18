@@ -1,6 +1,4 @@
-﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
-
-namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
 public class Proficiency : BaseEntity
 {
@@ -13,7 +11,7 @@ public class Proficiency : BaseEntity
     public int SkillBonus { get; set; }
     public string? RelatedAbilityScoreBonus { get; set; } // i.e. Dexterity
 
-    public ProficiencyType ProficiencyType { get; set; }
+    public ProficiencyType ProficiencyType { get; set; } = default!;
 
 
 }

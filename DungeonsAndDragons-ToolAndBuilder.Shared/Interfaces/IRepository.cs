@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson;
-
-namespace DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
+﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 public interface IRepository<IEntity, TId> where IEntity : IEntity<TId>
 {

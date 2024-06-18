@@ -1,9 +1,13 @@
 
 
 ### Todo
-* Deal with nullable warnings before migrations
-* DbContext SQL
-* Repository MongoDb
+* Write Methods in MongoDb repos
+* Write methods in SQL repos
+* Add-migration && Update-Database
+* If everything works: Seed data
+* Api-Specification
+* Create Minimal API 
+* Check all endpoints with Postman
 
 
 

@@ -1,7 +1,4 @@
-﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
-using DungeonsAndDragons_ToolAndBuilder.SQL.Enums;
-
-namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
+﻿namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
 public class GameAction : BaseEntity
 {
