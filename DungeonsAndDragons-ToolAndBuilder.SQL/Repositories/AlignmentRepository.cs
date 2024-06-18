@@ -1,37 +1,60 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class AlignmentRepository : IAlignmentRepository
+public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
 {
-    public Task<Alignment> GetByIdAsync(int id)
+    public async Task<Alignment?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await context.Alignments.FindAsync(id);
     }
-
-    public Task<IEnumerable<Alignment>> GetAllAsync()
+    public async Task<Alignment> GetAlignmentByName(string name)
     {
-        throw new NotImplementedException();
+        var alignment = await context.Alignments.ToListAsync();
+
+        var FuzzyScored = alignment.Select(x => new
+        {
+            Alignment = x,
+            Score = FuzzySharp.Fuzz.Ratio(name, x.Name)
+        });
+        return FuzzyScored.OrderByDescending(x => x.Score).First().Alignment;
     }
-
-    public Task<IEnumerable<Alignment>> GetMany(int start, int count)
+    public async Task<IEnumerable<Alignment>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await context.Alignments.ToListAsync();
     }
-
-    public Task<Alignment> AddAsync(Alignment entity)
+    public async Task<IEnumerable<Alignment>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        return await context.Alignments.Skip(start).Take(count).ToListAsync();
     }
-
-    public Task<Alignment> UpdateAsync(Alignment entity)
+    public async Task AddAsync(Alignment entity)
     {
-        throw new NotImplementedException();
+       await context.Alignments.AddAsync(entity);
+       await context.SaveChangesAsync();
+       
     }
-
-    public Task<Alignment> DeleteAsync(int id)
+    public async Task UpdateAsync(Alignment entity)
     {
-        throw new NotImplementedException();
+        var oldEntity = await context.Alignments.FindAsync(entity.Id);
+        if (oldEntity == null)
+        {
+            throw new Exception("Entity not found");
+        }
+
+        context.Entry(oldEntity).CurrentValues.SetValues(entity);
+        await context.SaveChangesAsync();
+        
+    }
+    public async Task DeleteAsync(int id)
+    {
+        var entity = await context.Alignments.FindAsync(id);
+        if (entity == null)
+        {
+            throw new Exception("Entity not found");
+        }
+        context.Alignments.Remove(entity);
+        await context.SaveChangesAsync();
     }
 }

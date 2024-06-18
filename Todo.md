@@ -13,7 +13,9 @@
 
 
 
-## Potential TODO
+## Currently working on:
+Writing methods in SQL repos and nterfacerepos
+
 
 
 

@@ -5,5 +5,5 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IAlignmentRepository : IRepository<Alignment, int>
 {
-    
+    Task<Alignment> GetAlignmentByName(string name);
 }
