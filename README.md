@@ -12,7 +12,7 @@ This is a private project, which I have chosen to do purely out of passion for b
 
 ## Current state of App: 
 
-New project, working on the design of the databases.
+Finalizing repositories before migration of database
 
 ---
 
