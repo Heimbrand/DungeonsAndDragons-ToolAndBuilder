@@ -8,6 +8,7 @@ public class Faction : BaseEntity
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
     public string? ImageUrl { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
     public ICollection<Tag>? FactionTags { get; set; }
 

@@ -7,5 +7,6 @@ public class Alignment : BaseEntity
     public int NpcId { get; set; }
 
     public string Name { get; set; } = default!;
-    public string? Description { get; set; } 
+    public string? Description { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 }

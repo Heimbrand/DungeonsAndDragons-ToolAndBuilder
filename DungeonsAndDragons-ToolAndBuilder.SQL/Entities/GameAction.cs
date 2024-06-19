@@ -20,6 +20,7 @@ public class GameAction : BaseEntity
     public bool IsMonsterSpecific { get; set; }
     public bool IsNpcSpecific { get; set; } //Potential homebrew stuff
     public bool IsStandardAction { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
     public ICollection<Tag>? GameActionTags { get; set; }
 

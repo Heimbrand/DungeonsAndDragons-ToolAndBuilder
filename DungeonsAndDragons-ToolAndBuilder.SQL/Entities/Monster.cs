@@ -10,6 +10,7 @@ public class Monster : BaseEntity
     public string? Description { get; set; }
     public int ChallengeRating { get; set; }
     public int ExperiencePoints { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
     public Alignment? Alignment { get; set; }
     public MonsterType? MonsterType { get; set; }

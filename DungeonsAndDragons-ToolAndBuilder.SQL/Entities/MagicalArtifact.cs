@@ -9,6 +9,7 @@ public class MagicalArtifact : BaseEntity
     public string? Description { get; set; }
     public double? Weight { get; set; } 
     public double? Cost { get; set; }
-    
+    public bool IsPre5E { get; set; } = default!;
+
 
 }

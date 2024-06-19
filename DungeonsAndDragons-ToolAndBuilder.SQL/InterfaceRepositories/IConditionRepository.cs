@@ -5,5 +5,5 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IConditionRepository : IRepository<Condition, int>
 {
-    
+    Task<Condition> GetConditionByName(string name);
 }

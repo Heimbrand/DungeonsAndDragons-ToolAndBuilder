@@ -11,5 +11,6 @@ public class Weapon : BaseEntity
     public string? Properties { get; set; } // light, finesse, thrown, two-handed, versatile, ammunition, heavy, reach, loading, special
     public string? WeaponType { get; set; } // simple, martial, ranged, melee
     public string? Rarity { get; set; } // common, uncommon, rare, very rare, legendary
+    public bool IsPre5E { get; set; } = default!;
 
 }

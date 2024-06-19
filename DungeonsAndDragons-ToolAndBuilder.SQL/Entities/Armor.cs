@@ -11,5 +11,6 @@ public class Armor : BaseEntity
     public double? Cost { get; set; }
     public string? Rarity { get; set; }
     public string? MagicalEffects { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
 }

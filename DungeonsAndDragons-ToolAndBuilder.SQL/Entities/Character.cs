@@ -18,7 +18,9 @@ public class Character : BaseEntity
     public string? HitDice { get; set; }
     public int? DeathSaveSuccesses { get; set; }
     public int? DeathSaveFailures { get; set; }
-    
+    public bool? IsDead { get; set; }
+    public bool IsPre5E { get; set; } = default!;
+
 
     public int? Strength { get; set; }
     public int? Dexterity { get; set; }

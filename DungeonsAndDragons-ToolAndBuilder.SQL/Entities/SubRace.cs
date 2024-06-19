@@ -6,6 +6,7 @@ public class SubRace : BaseEntity
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? SubRaceImg { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
 
     public ICollection<Proficiency>? Proficiencies { get; set; }

@@ -11,5 +11,6 @@ public class Consumable : BaseEntity
     public double? Cost { get; set; }
     public string? Rarity { get; set; }
     public string? ConsumableType { get; set; } // Potion, Scroll, Wand, etc.
+    public bool IsPre5E { get; set; } = default!;
 
 }

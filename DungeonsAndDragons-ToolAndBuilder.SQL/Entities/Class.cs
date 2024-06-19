@@ -7,8 +7,9 @@ public class Class : BaseEntity
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? ClassImg { get; set; }
+    public bool IsPre5E { get; set; } = default!;
 
-  
+
     public ICollection<ClassFeature>? ClassFeatures { get; set; }
     public ICollection<Proficiency>? Proficiencies { get; set; }
 
