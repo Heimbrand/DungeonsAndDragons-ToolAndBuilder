@@ -18,11 +18,11 @@ public class InventoryRepository : IInventoryRepository
         var database = client.GetDatabase(databaseName);
         _inventoryCollection = database.GetCollection<Inventory>(collectionName, new MongoCollectionSettings(){AssignIdOnInsert = true});
     }
-    public Task<Inventory> AddAsync(Inventory entity)
+    public Task AddAsync(Inventory entity)
     {
         throw new NotImplementedException();
     }
-    public Task<Inventory> DeleteAsync(ObjectId id)
+    public Task DeleteAsync(ObjectId id)
     {
         throw new NotImplementedException();
     }
@@ -38,7 +38,7 @@ public class InventoryRepository : IInventoryRepository
     {
         throw new NotImplementedException();
     }
-    public Task<Inventory> UpdateAsync(Inventory entity)
+    public Task UpdateAsync(Inventory entity)
     {
         throw new NotImplementedException();
     }
