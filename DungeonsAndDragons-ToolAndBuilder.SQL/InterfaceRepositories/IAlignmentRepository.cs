@@ -5,5 +5,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IAlignmentRepository : IRepository<Alignment, int>
 {
-    Task<Alignment> GetAlignmentByName(string name);
+    Task<IEnumerable<Alignment>> GetAlignmentByName(string name);
+    Task<IEnumerable<Alignment>> GetManyPre5EAlignments(bool isPre5E, int start, int count);
 }

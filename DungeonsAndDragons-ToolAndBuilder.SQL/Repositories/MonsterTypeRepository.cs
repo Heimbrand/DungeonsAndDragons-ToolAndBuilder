@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class TypeRepository : ITypeRepository
+public class MonsterTypeRepository : IMonsterTypeRepository
 {
     public Task<MonsterType> GetByIdAsync(int id)
     {

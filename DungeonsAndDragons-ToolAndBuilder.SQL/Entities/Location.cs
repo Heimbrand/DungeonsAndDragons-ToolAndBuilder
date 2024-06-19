@@ -4,6 +4,7 @@ public class Location : BaseEntity
 {
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
+    public string RelatedAdventure  { get; set; } = default!;
     public string? LocationUrl { get; set; }
     public bool IsPre5E { get; set; } = default!;
 }

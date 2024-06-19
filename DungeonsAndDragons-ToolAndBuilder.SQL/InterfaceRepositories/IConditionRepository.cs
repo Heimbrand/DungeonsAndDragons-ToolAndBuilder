@@ -5,5 +5,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IConditionRepository : IRepository<Condition, int>
 {
-    Task<Condition> GetConditionByName(string name);
+    Task<IEnumerable<Condition>> GetConditionByName(string name);
+    Task<IEnumerable<Condition>> GetManyPre5EConditions(bool isPre5E, int start, int count);
 }

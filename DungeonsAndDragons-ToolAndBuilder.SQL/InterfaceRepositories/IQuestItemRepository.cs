@@ -5,5 +5,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IQuestItemRepository : IRepository<QuestItem, int>
 {
+
     
 }

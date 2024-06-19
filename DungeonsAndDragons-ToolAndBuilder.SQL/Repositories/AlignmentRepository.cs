@@ -21,6 +21,12 @@ public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
         });
         return FuzzyScored.OrderByDescending(x => x.Score).First().Alignment;
     }
+
+    public Task<Alignment> GetManyPre5EAlignments(bool isPre5E, int start, int count)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<IEnumerable<Alignment>> GetAllAsync()
     {
         return await context.Alignments.ToListAsync();

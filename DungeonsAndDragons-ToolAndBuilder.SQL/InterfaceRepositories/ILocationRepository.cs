@@ -5,5 +5,5 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface ILocationRepository : IRepository<Location, int>
 {
-    
+    Task<IEnumerable<Location>> GetLocationsByAdventure(string adventure);
 }

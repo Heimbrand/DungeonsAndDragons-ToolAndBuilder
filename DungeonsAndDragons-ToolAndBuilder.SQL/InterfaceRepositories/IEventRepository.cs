@@ -5,5 +5,5 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IEventRepository : IRepository<Event, int>
 {
-    
+    Task<Event> GetEventByName(string name);
 }

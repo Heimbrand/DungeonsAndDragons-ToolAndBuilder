@@ -7,6 +7,6 @@ public class Event : BaseEntity
     public string Description { get; set; } = default!;
     public string? EventImg { get; set; }
     public ICollection<Tag>? EventTags { get; set; }
-    public bool IsPre5E { get; set; } = default!;
+    
 
 }
