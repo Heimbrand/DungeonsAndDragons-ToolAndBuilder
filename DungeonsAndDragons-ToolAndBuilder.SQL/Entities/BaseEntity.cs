@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 
-public class BaseEntity : IEntity<int>
+public abstract class BaseEntity : IEntity<int>
 {
     [Key]
     public int Id { get; set; }

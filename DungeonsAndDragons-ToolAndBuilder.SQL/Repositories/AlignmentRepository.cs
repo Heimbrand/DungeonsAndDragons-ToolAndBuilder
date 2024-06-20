@@ -26,9 +26,12 @@ public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
         {
             Alignment = x,
             Score = FuzzySharp.Fuzz.Ratio(name, x.Name)
-        });
+        })
+            .Where(c => c.Score > 80)
+            .OrderByDescending(c => c.Score)
+            .Select(c => c.Alignment);
 
-        return fuzzyScored.OrderByDescending(x => x.Score).Select(x => x.Alignment);
+        return fuzzyScored;
     }
     public async Task<IEnumerable<Alignment>> GetManyPre5EAlignments(int start, int count)
     {

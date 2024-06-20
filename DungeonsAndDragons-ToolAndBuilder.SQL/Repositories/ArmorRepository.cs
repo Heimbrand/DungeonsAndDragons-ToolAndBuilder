@@ -69,8 +69,12 @@ public class ArmorRepository(DnDbContext context) : IArmorRepository
         {
             Armors = a,
             Score = FuzzySharp.Fuzz.Ratio(a.Name, name)
-        });
-        return fuzzyScored.OrderByDescending(x => x.Score).Select(x => x.Armors);
+        })
+            .Where(c => c.Score > 80)
+            .OrderByDescending(c => c.Score)
+            .Select(c => c.Armors);
+
+        return fuzzyScored;
     }
     public async Task<IEnumerable<Armor>> GetArmorByRarity(string rarity)
     {
