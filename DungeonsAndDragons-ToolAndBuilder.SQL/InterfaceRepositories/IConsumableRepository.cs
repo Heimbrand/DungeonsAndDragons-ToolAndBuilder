@@ -10,5 +10,5 @@ public interface IConsumableRepository : IRepository<Consumable, int>
 
     Task<IEnumerable<Consumable>> GetAllConsumablesByType(string type);
     Task<IEnumerable<Consumable>> GetManyConsumablesByType(string type, int start, int count);
-    Task<IEnumerable<Consumable>> GetManyPre5EByType(string type, bool isPre5E, int start, int count);
+    Task<IEnumerable<Consumable>> GetManyPre5EByType(string type,int start, int count);
 } 

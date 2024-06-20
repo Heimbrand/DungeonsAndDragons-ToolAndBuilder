@@ -6,6 +6,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 public interface ICharacterRepository : IRepository<Character, int>
 {
     Task<IEnumerable<Character>> GetCharacterByName(string name);
-    Task<IEnumerable<Character>> GetAllLivingCharacters(bool isDead);
-    Task<IEnumerable<Character>> GetAllDeadCharacters(bool isdead);
+    Task<IEnumerable<Character>> GetAllLivingCharacters();
+    Task<IEnumerable<Character>> GetAllDeadCharacters();
 }
