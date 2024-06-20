@@ -14,7 +14,7 @@
 
 
 ## Currently working on:
-Writing methods in SQL repos and nterfacerepos
+Writing methods in SQL repos 
 
 
 
