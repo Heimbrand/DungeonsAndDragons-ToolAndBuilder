@@ -14,7 +14,6 @@ public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
             throw new Exception("No Alignment with that ID exists");
         
         return alignment;
-        
     }
     public async Task<IEnumerable<Alignment>> GetAlignmentByName(string name)
     {
@@ -31,14 +30,13 @@ public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
 
         return fuzzyScored.OrderByDescending(x => x.Score).Select(x => x.Alignment);
     }
-    public async Task<IEnumerable<Alignment>> GetManyPre5EAlignments(int start, int count, bool isPre5E = true)
+    public async Task<IEnumerable<Alignment>> GetManyPre5EAlignments(int start, int count)
     {
-        var alignment = await context.Alignments.ToListAsync();
+        var pre5EAlignments = await context.Alignments.Where(a=> a.IsPre5E == true).Skip(start).Take(count).ToListAsync();
 
-        if (alignment is null)
-            throw new Exception("No Alignments where found");
-
-        var pre5EAlignments =  alignment.Where(x => x.IsPre5E == isPre5E).Skip(start).Take(count);
+        if (pre5EAlignments is null)
+            throw new Exception("No Pre5E Alignments where found");
+        
         return pre5EAlignments;
     }
     public async Task<IEnumerable<Alignment>> GetAllAsync()
