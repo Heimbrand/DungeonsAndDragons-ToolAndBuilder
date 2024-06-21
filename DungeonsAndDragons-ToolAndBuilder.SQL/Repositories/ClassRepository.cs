@@ -3,34 +3,47 @@ using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class ClassRepository : IClassRepository
+public class ClassRepository(DnDbContext context) : IClassRepository
 {
-    public Task<Class> GetByIdAsync(int id)
+    public async Task<Class> GetByIdAsync(int id)
+    {
+        var classById = await context.Classes.FindAsync(id);
+
+        if (classById is null)
+            throw new Exception("No Class found with that ID");
+    }
+
+    public async Task<IEnumerable<Class>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Class>> GetAllAsync()
+    public async Task<IEnumerable<Class>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<Class>> GetMany(int start, int count)
+    public async Task AddAsync(Class entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Class> AddAsync(Class entity)
+    public async Task UpdateAsync(Class entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Class> UpdateAsync(Class entity)
+    public async Task DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Class> DeleteAsync(int id)
+    public async Task<IEnumerable<Class>> GetClassByName(string name)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<IEnumerable<Class>> GetAllPre5EClasses()
     {
         throw new NotImplementedException();
     }
