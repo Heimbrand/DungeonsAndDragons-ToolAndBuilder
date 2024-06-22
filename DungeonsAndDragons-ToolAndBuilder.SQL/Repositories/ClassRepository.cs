@@ -1,5 +1,6 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
@@ -15,7 +16,12 @@ public class ClassRepository(DnDbContext context) : IClassRepository
 
     public async Task<IEnumerable<Class>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allClasses = await context.Classes.ToListAsync();
+
+        if (allClasses is null)
+            throw new Exception("No classes found");
+
+        return allClasses;
     }
 
     public async Task<IEnumerable<Class>> GetMany(int start, int count)
