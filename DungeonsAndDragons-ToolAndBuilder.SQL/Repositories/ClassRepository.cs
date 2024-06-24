@@ -26,7 +26,7 @@ public class ClassRepository(DnDbContext context) : IClassRepository
     }
     public async Task<IEnumerable<Class>> GetMany(int start, int count)
     {
-        var getMany = context.Classes.Skip(start).Take(count);
+        var getMany = await context.Classes.Skip(start).Take(count).ToListAsync();
 
         if (getMany is null)
             throw new Exception("No classes found");
@@ -39,7 +39,13 @@ public class ClassRepository(DnDbContext context) : IClassRepository
     }
     public async Task UpdateAsync(Class entity)
     {
-        var updateClass = context.Classes.Update(entity);
+        var oldCondition = await context.Classes.FindAsync(entity.Id);
+
+        if (oldCondition is null)
+            throw new Exception("No class found with that ID");
+
+        context.Entry(oldCondition).CurrentValues.SetValues(entity);
+        context.SaveChanges();
     }
     public async Task DeleteAsync(int id)
     {
