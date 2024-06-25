@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class MonsterTypeRepository : IMonsterTypeRepository
+public class MonsterTypeRepository(DnDbContext context) : IMonsterTypeRepository
 {
-    public Task<MonsterType> GetByIdAsync(int id)
+    public async Task<MonsterType> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var monsterTypeById = await context.MonsterTypes.FindAsync(id);
+
+        if (monsterTypeById is null)
+            throw new Exception("No MonsterType found with that ID");
+
+        return monsterTypeById;
     }
 
-    public Task<IEnumerable<MonsterType>> GetAllAsync()
+    public async Task<IEnumerable<MonsterType>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allMonsterTypes = await context.MonsterTypes.ToListAsync();
+
+        if (allMonsterTypes is null)
+            throw new Exception("No MonsterTypes found");
+
+        return allMonsterTypes;
     }
 
-    public Task<IEnumerable<MonsterType>> GetMany(int start, int count)
+    public async Task<IEnumerable<MonsterType>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyMonsterTypes = await context.MonsterTypes.Skip(start).Take(count).ToListAsync();
+
+        if (getManyMonsterTypes is null)
+            throw new Exception("No MonsterTypes found");
+
+        return getManyMonsterTypes;
     }
 
-    public Task<MonsterType> AddAsync(MonsterType entity)
+    public async Task AddAsync(MonsterType entity)
     {
-        throw new NotImplementedException();
+        var addMonsterType = await context.MonsterTypes.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<MonsterType> UpdateAsync(MonsterType entity)
+    public async Task UpdateAsync(MonsterType entity)
     {
-        throw new NotImplementedException();
+        var oldMonsterType = await context.MonsterTypes.FindAsync(entity.Id);
+
+        if (oldMonsterType is null)
+            throw new Exception("No MonsterType found with that ID");
+
+        context.Entry(oldMonsterType).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<MonsterType> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+       var monsterTypeToDelete = await context.MonsterTypes.FindAsync(id);
+
+        if (monsterTypeToDelete is null)
+            throw new Exception("No MonsterType found with that ID");
+
+        context.MonsterTypes.Remove(monsterTypeToDelete);
+        context.SaveChangesAsync();
     }
 }

@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class QuestItemRepository : IQuestItemRepository
+public class QuestItemRepository(DnDbContext context) : IQuestItemRepository
 {
-    public Task<QuestItem> GetByIdAsync(int id)
+    public async Task<QuestItem> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var questItemById = await context.QuestItems.FindAsync(id);
+
+        if (questItemById is null)
+            throw new Exception("No QuestItem found with that ID");
+
+        return questItemById;
     }
 
-    public Task<IEnumerable<QuestItem>> GetAllAsync()
+    public async Task<IEnumerable<QuestItem>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allQuestItems = await context.QuestItems.ToListAsync();
+
+        if (allQuestItems is null)
+            throw new Exception("No QuestItems found");
+
+        return allQuestItems;
     }
 
-    public Task<IEnumerable<QuestItem>> GetMany(int start, int count)
+    public async Task<IEnumerable<QuestItem>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyQuestItems = await context.QuestItems.Skip(start).Take(count).ToListAsync();
+
+        if (getManyQuestItems is null)
+            throw new Exception("No QuestItems found");
+
+        return getManyQuestItems;
     }
 
-    public Task<QuestItem> AddAsync(QuestItem entity)
+    public async Task AddAsync(QuestItem entity)
     {
-        throw new NotImplementedException();
+        var addQuestItem = await context.QuestItems.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<QuestItem> UpdateAsync(QuestItem entity)
+    public async Task UpdateAsync(QuestItem entity)
     {
-        throw new NotImplementedException();
+        var oldQuestItem = await context.QuestItems.FindAsync(entity.Id);
+
+        if (oldQuestItem is null)
+            throw new Exception("No QuestItem found with that ID");
+
+        context.Entry(oldQuestItem).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<QuestItem> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var questItemToDelete = await context.QuestItems.FindAsync(id);
+
+        if (questItemToDelete is null)
+            throw new Exception("No QuestItem found with that ID");
+
+        context.QuestItems.Remove(questItemToDelete);
+        context.SaveChangesAsync();
     }
 }

@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class ProficiencyTypeRepository : IProficiencyTypeRepository
+public class ProficiencyTypeRepository(DnDbContext context) : IProficiencyTypeRepository
 {
-    public Task<ProficiencyType> AddAsync(ProficiencyType entity)
+    public async Task AddAsync(ProficiencyType entity)
     {
-        throw new NotImplementedException();
+        var addProficiencyType = await context.ProficiencyTypes.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<ProficiencyType> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var proficiencyTypeToDelete = await context.ProficiencyTypes.FindAsync(id);
+
+        if (proficiencyTypeToDelete is null)
+            throw new Exception("No ProficiencyType found with that ID");
+
+        context.ProficiencyTypes.Remove(proficiencyTypeToDelete);
+        context.SaveChangesAsync();
     }
 
-    public Task<IEnumerable<ProficiencyType>> GetAllAsync()
+    public async Task UpdateAsync(ProficiencyType entity)
     {
-        throw new NotImplementedException();
+        var oldProficiencyType = await context.ProficiencyTypes.FindAsync(entity.Id);
+
+        if (oldProficiencyType is null)
+            throw new Exception("No ProficiencyType found with that ID");
+
+        context.Entry(oldProficiencyType).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<ProficiencyType> GetByIdAsync(int id)
+    public async  Task<IEnumerable<ProficiencyType>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allProficiencyTypes = await context.ProficiencyTypes.ToListAsync();
+
+        if (allProficiencyTypes is null)
+            throw new Exception("No ProficiencyTypes found");
+
+        return allProficiencyTypes;
     }
 
-    public Task<IEnumerable<ProficiencyType>> GetMany(int start, int count)
+    public async Task<ProficiencyType> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var proficiencyTypeById = await context.ProficiencyTypes.FindAsync(id);
+
+        if (proficiencyTypeById is null)
+            throw new Exception("No ProficiencyType found with that ID");
+
+        return proficiencyTypeById;
     }
 
-    public Task<ProficiencyType> UpdateAsync(ProficiencyType entity)
+    public async Task<IEnumerable<ProficiencyType>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyProficiencyTypes = await context.ProficiencyTypes.Skip(start).Take(count).ToListAsync();
+
+        if (getManyProficiencyTypes is null)
+            throw new Exception("No ProficiencyTypes found");
+
+        return getManyProficiencyTypes;
     }
 }
