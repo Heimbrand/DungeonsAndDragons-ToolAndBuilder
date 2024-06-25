@@ -57,6 +57,7 @@ public class ArmorRepository(DnDbContext context) : IArmorRepository
             throw new Exception("No armor with that ID exist");
 
         context.Armors.Remove(armorToDelete);
+        await context.SaveChangesAsync();
     }
     public async Task<IEnumerable<Armor>> GetArmorByName(string name)
     {

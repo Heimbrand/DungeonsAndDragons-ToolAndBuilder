@@ -36,6 +36,7 @@ public class ConditionRepository(DnDbContext context) : IConditionRepository
     public async Task AddAsync(Condition entity)
     {
         var addCondition = await context.Conditions.AddAsync(entity);
+        context.SaveChangesAsync();
     }
     public async Task UpdateAsync(Condition entity)
     {
@@ -45,7 +46,7 @@ public class ConditionRepository(DnDbContext context) : IConditionRepository
             throw new Exception("Condition not found");
 
         context.Entry(oldCondition).CurrentValues.SetValues(entity);
-        context.SaveChanges();
+        context.SaveChangesAsync();
 
     }
     public async Task DeleteAsync(int id)
@@ -56,7 +57,7 @@ public class ConditionRepository(DnDbContext context) : IConditionRepository
             throw new Exception("Condition not found");
 
         context.Conditions.Remove(deleteCondition);
-        context.SaveChanges();
+        context.SaveChangesAsync();
     }
     public async Task<IEnumerable<Condition>> GetConditionByName(string name)
     {

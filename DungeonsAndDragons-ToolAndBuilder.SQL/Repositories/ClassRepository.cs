@@ -36,6 +36,7 @@ public class ClassRepository(DnDbContext context) : IClassRepository
     public async Task AddAsync(Class entity)
     {
         var addClass = await context.Classes.AddAsync(entity);
+        context.SaveChangesAsync();
     }
     public async Task UpdateAsync(Class entity)
     {
@@ -45,7 +46,7 @@ public class ClassRepository(DnDbContext context) : IClassRepository
             throw new Exception("No class found with that ID");
 
         context.Entry(oldCondition).CurrentValues.SetValues(entity);
-        context.SaveChanges();
+        context.SaveChangesAsync();
     }
     public async Task DeleteAsync(int id)
     {
@@ -55,6 +56,7 @@ public class ClassRepository(DnDbContext context) : IClassRepository
             throw new Exception("No class found with that ID");
 
         context.Classes.Remove(deleteClass);
+        context.SaveChangesAsync();
     }
     public async Task<IEnumerable<Class>> GetClassByName(string name)
     {
