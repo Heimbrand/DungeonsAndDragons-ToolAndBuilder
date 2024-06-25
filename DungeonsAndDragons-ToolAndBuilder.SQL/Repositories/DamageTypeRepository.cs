@@ -1,37 +1,61 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class DamageTypeRepository : IDamageTypeRepository
+public class DamageTypeRepository(DnDbContext context) : IDamageTypeRepository
 {
-    public Task<DamageType> GetByIdAsync(int id)
+    public async Task<DamageType> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
-    }
+        var damageTypeById = await context.DamageTypes.FindAsync(id);
 
-    public Task<IEnumerable<DamageType>> GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
+        if (damageTypeById is null)
+            throw new Exception("No DamageType found with that ID");
 
-    public Task<IEnumerable<DamageType>> GetMany(int start, int count)
-    {
-        throw new NotImplementedException();
+        return damageTypeById;
     }
-
-    public Task<DamageType> AddAsync(DamageType entity)
+    public async Task<IEnumerable<DamageType>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allDamageTypes = await context.DamageTypes.ToListAsync();
+
+        if (allDamageTypes is null)
+            throw new Exception("No DamageTypes found");
+
+        return allDamageTypes;
     }
-
-    public Task<DamageType> UpdateAsync(DamageType entity)
+    public async Task<IEnumerable<DamageType>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyDamageTypes = await context.DamageTypes.Skip(start).Take(count).ToListAsync();
+
+        if (getManyDamageTypes is null)
+            throw new Exception("No DamageTypes found");
+
+        return getManyDamageTypes;
     }
-
-    public Task<DamageType> DeleteAsync(int id)
+    public async Task AddAsync(DamageType entity)
     {
-        throw new NotImplementedException();
+        var addDamageType = await context.DamageTypes.AddAsync(entity);
+        context.SaveChangesAsync();
+    }
+    public async Task UpdateAsync(DamageType entity)
+    {
+        var oldDamageType = await context.DamageTypes.FindAsync(entity.Id);
+
+        if (oldDamageType is null)
+            throw new Exception("No DamageType found with that ID");
+
+        context.Entry(oldDamageType).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
+    }
+    public async Task DeleteAsync(int id)
+    {
+       var deleteDamageType = await context.DamageTypes.FindAsync(id);
+
+        if (deleteDamageType is null)
+            throw new Exception("No DamageType found with that ID");
+
+        context.DamageTypes.Remove(deleteDamageType);
+        context.SaveChangesAsync();
     }
 }
