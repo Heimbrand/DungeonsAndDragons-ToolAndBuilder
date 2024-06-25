@@ -1,37 +1,82 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class EventRepository : IEventRepository
+public class EventRepository(DnDbContext context) : IEventRepository
 {
-    public Task<Event> GetByIdAsync(int id)
+    public async Task<Event> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var eventById = await context.Events.FindAsync(id);
+
+        if (eventById is null)
+            throw new Exception("No Event found with that ID");
+
+        return eventById;
     }
 
-    public Task<IEnumerable<Event>> GetAllAsync()
+    public async Task<IEnumerable<Event>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allEvents = await context.Events.ToListAsync();
+
+        if (allEvents is null)
+            throw new Exception("No Events found");
+
+        return allEvents;
     }
 
-    public Task<IEnumerable<Event>> GetMany(int start, int count)
+    public async Task<IEnumerable<Event>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyEvents = await context.Events.Skip(start).Take(count).ToListAsync();
+
+        if (getManyEvents is null)
+            throw new Exception("No Events found");
+
+        return getManyEvents;
     }
 
-    public Task<Event> AddAsync(Event entity)
+    public async Task AddAsync(Event entity)
     {
-        throw new NotImplementedException();
+        var addEvent = await context.Events.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Event> UpdateAsync(Event entity)
+    public async Task UpdateAsync(Event entity)
     {
-        throw new NotImplementedException();
+        var oldEvent = await context.Events.FindAsync(entity.Id);
+
+        if (oldEvent is null)
+            throw new Exception("No Event found with that ID");
+
+        context.Entry(oldEvent).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Event> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var eventToDelete = await context.Events.FindAsync(id);
+
+        if (eventToDelete is null)
+            throw new Exception("No Event found with that ID");
+
+        context.Events.Remove(eventToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Event>> GetEventByName(string name)
+    {
+        var eventByName = await context.Events.ToListAsync();
+
+        var fuzzyScored = eventByName.Select(x => new
+            {
+                Score = FuzzySharp.Fuzz.PartialRatio(x.Name, name),
+                Event = x
+            })
+            .Where(x => x.Score > 80)
+            .OrderByDescending(x => x.Score)
+            .Select(x => x.Event);
+
+        return eventByName;
     }
 }
