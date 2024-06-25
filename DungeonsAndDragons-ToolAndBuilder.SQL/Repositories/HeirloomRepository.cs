@@ -1,37 +1,76 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class HeirloomRepository : IHeirloomRepository
+public class HeirloomRepository(DnDbContext context) : IHeirloomRepository
 {
-    public Task<Heirloom> GetByIdAsync(int id)
+    public async Task<Heirloom> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var heirloomById = await context.Heirlooms.FindAsync(id);
+
+        if (heirloomById is null)
+            throw new Exception("No Heirloom found with that ID");
+
+        return heirloomById;
     }
 
-    public Task<IEnumerable<Heirloom>> GetAllAsync()
+    public async Task<IEnumerable<Heirloom>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allHeirlooms = await context.Heirlooms.ToListAsync();
+
+        if (allHeirlooms is null)
+            throw new Exception("No Heirlooms found");
+
+        return allHeirlooms;
     }
 
-    public Task<IEnumerable<Heirloom>> GetMany(int start, int count)
+    public async Task<IEnumerable<Heirloom>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var manyHeirlooms = await context.Heirlooms.Skip(start).Take(count).ToListAsync();
+
+        if (manyHeirlooms is null)
+            throw new Exception("No Heirlooms found");
+
+        return manyHeirlooms;
     }
 
-    public Task<Heirloom> AddAsync(Heirloom entity)
+    public async Task AddAsync(Heirloom entity)
     {
-        throw new NotImplementedException();
+        var addHeirloom = await context.Heirlooms.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Heirloom> UpdateAsync(Heirloom entity)
+    public async Task UpdateAsync(Heirloom entity)
     {
-        throw new NotImplementedException();
+        var oldHeirloom = await context.Heirlooms.FindAsync(entity.Id);
+
+        if (oldHeirloom is null)
+            throw new Exception("No Heirloom found with that ID");
+
+        context.Entry(oldHeirloom).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Heirloom> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var heirloomToDelete = await context.Heirlooms.FindAsync(id);
+
+        if (heirloomToDelete is null)
+            throw new Exception("No Heirloom found with that ID");
+
+        context.Heirlooms.Remove(heirloomToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Heirloom>> GetHeirloomsByAdventure(string adventure)
+    {
+        var heirloomsByAdventure = await context.Heirlooms.Where(h => h.RelatedAdventure == adventure).ToListAsync();
+
+        if (heirloomsByAdventure is null)
+            throw new Exception("No Heirlooms found");
+
+        return heirloomsByAdventure;
     }
 }

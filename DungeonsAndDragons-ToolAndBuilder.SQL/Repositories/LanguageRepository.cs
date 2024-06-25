@@ -1,37 +1,78 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class LanguageRepository : ILanguageRepository
+public class LanguageRepository(DnDbContext context) : ILanguageRepository
 {
-    public Task<Language> GetByIdAsync(int id)
+    public async Task<Language> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var languageById = await context.Languages.FindAsync(id);
+
+        if (languageById is null)
+            throw new Exception("No Language found with that ID");
+
+        return languageById;
     }
 
-    public Task<IEnumerable<Language>> GetAllAsync()
+    public async Task<IEnumerable<Language>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allLanguages = await context.Languages.ToListAsync();
+
+        if (allLanguages is null)
+            throw new Exception("No Languages found");
+
+        return allLanguages;
     }
 
-    public Task<IEnumerable<Language>> GetMany(int start, int count)
+    public async Task<IEnumerable<Language>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyLanguages = await context.Languages.Skip(start).Take(count).ToListAsync();
+
+        if (getManyLanguages is null)
+            throw new Exception("No Languages found");
+
+        return getManyLanguages;
     }
 
-    public Task<Language> AddAsync(Language entity)
+    public async Task AddAsync(Language entity)
     {
-        throw new NotImplementedException();
+        var addLanguage = await context.Languages.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Language> UpdateAsync(Language entity)
+    public async Task UpdateAsync(Language entity)
     {
-        throw new NotImplementedException();
+        var oldLanguage = await context.Languages.FindAsync(entity.Id);
+
+        if (oldLanguage is null)
+            throw new Exception("No Language found with that ID");
+
+        context.Entry(oldLanguage).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Language> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var languageToDelete = await context.Languages.FindAsync(id);
+
+        if (languageToDelete is null)
+            throw new Exception("No Language found with that ID");
+
+        context.Languages.Remove(languageToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Language>> GetLanguagesByNpcId(int NpcId)
+    {
+        var languagesByNpcId = await context.Languages.Where(l => l.NpcId == NpcId).ToListAsync();
+        return languagesByNpcId;
+    }
+
+    public async Task<IEnumerable<Language>> GetLanguagesByCharacterId(int characterId)
+    {
+        var languagesByCharacterId = await context.Languages.Where(l => l.CharacterId == characterId).ToListAsync();
+        return languagesByCharacterId;
     }
 }

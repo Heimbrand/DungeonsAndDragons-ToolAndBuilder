@@ -1,37 +1,76 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class LocationRepository : ILocationRepository
+public class LocationRepository(DnDbContext context) : ILocationRepository
 {
-    public Task<Location> GetByIdAsync(int id)
+    public async Task<Location> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var locationById = await context.Locations.FindAsync(id);
+
+        if (locationById is null)
+            throw new Exception("No Location found with that ID");
+
+        return locationById;
     }
 
-    public Task<IEnumerable<Location>> GetAllAsync()
+    public async Task<IEnumerable<Location>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allLocations = await context.Locations.ToListAsync();
+
+        if (allLocations is null)
+            throw new Exception("No Locations found");
+
+        return allLocations;
     }
 
-    public Task<IEnumerable<Location>> GetMany(int start, int count)
+    public async Task<IEnumerable<Location>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyLocations = await context.Locations.Skip(start).Take(count).ToListAsync();
+
+        if (getManyLocations is null)
+            throw new Exception("No Locations found");
+
+        return getManyLocations;
     }
 
-    public Task<Location> AddAsync(Location entity)
+    public async Task AddAsync(Location entity)
     {
-        throw new NotImplementedException();
+        var addLocation = await context.Locations.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Location> UpdateAsync(Location entity)
+    public async Task UpdateAsync(Location entity)
     {
-        throw new NotImplementedException();
+        var oldLocation = await context.Locations.FindAsync(entity.Id);
+
+        if (oldLocation is null)
+            throw new Exception("No Location found with that ID");
+
+        context.Entry(oldLocation).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Location> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var locationToDelete = await context.Locations.FindAsync(id);
+
+        if (locationToDelete is null)
+            throw new Exception("No Location found with that ID");
+
+        context.Locations.Remove(locationToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Location>> GetLocationsByAdventure(string adventure)
+    {
+        var locationsByAdventure = await context.Locations.Where(l => l.RelatedAdventure == adventure).ToListAsync();
+
+        if (locationsByAdventure is null)
+            throw new Exception("No Locations found");
+
+        return locationsByAdventure;
     }
 }
