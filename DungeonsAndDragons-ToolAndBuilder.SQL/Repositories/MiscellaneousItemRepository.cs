@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class MiscellaneousItemRepository : IMiscellaneousItemRepository
+public class MiscellaneousItemRepository(DnDbContext context) : IMiscellaneousItemRepository
 {
-    public Task<MiscellaneousItem> GetByIdAsync(int id)
+    public async Task<MiscellaneousItem> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var miscellaneousItemById = await context.MiscellaneousItems.FindAsync(id);
+
+        if (miscellaneousItemById is null)
+            throw new Exception("No MiscellaneousItem found with that ID");
+
+        return miscellaneousItemById;
     }
 
-    public Task<IEnumerable<MiscellaneousItem>> GetAllAsync()
+    public async Task<IEnumerable<MiscellaneousItem>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allMiscellaneousItems = await context.MiscellaneousItems.ToListAsync();
+
+        if (allMiscellaneousItems is null)
+            throw new Exception("No MiscellaneousItems found");
+
+        return allMiscellaneousItems;
     }
 
-    public Task<IEnumerable<MiscellaneousItem>> GetMany(int start, int count)
+    public async Task<IEnumerable<MiscellaneousItem>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var manyMiscellaneousItems = await context.MiscellaneousItems.Skip(start).Take(count).ToListAsync();
+
+        if (manyMiscellaneousItems is null)
+            throw new Exception("No MiscellaneousItems found");
+
+        return manyMiscellaneousItems;
     }
 
-    public Task<MiscellaneousItem> AddAsync(MiscellaneousItem entity)
+    public async Task AddAsync(MiscellaneousItem entity)
     {
-        throw new NotImplementedException();
+        var addMiscellaneousItem = await context.MiscellaneousItems.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<MiscellaneousItem> UpdateAsync(MiscellaneousItem entity)
+    public async Task UpdateAsync(MiscellaneousItem entity)
     {
-        throw new NotImplementedException();
+        var oldMiscellaneousItem = await context.MiscellaneousItems.FindAsync(entity.Id);
+
+        if (oldMiscellaneousItem is null)
+            throw new Exception("No MiscellaneousItem found with that ID");
+
+        context.Entry(oldMiscellaneousItem).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<MiscellaneousItem> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var miscellaneousItemToDelete = await context.MiscellaneousItems.FindAsync(id);
+
+        if (miscellaneousItemToDelete is null)
+            throw new Exception("No MiscellaneousItem found with that ID");
+
+        context.MiscellaneousItems.Remove(miscellaneousItemToDelete);
+        context.SaveChangesAsync();
     }
 }

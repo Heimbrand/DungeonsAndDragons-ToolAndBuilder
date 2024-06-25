@@ -10,6 +10,5 @@ public interface IMonsterRepository : IRepository<Monster, int>
     Task<IEnumerable<Monster>> GetMonstersByType(string type);
     Task<IEnumerable<Monster>> GetMonstersBySize(string size);
     Task<IEnumerable<Monster>> GetMonstersByAlignment(string alignment);
-    Task<IEnumerable<Monster>> GetMonstersByEnvironment(string environment);
-    Task<IEnumerable<Monster>> GetManyPre5EMonsters();
+    Task<IEnumerable<Monster>> GetManyPre5EMonsters(int start, int count);
 }
