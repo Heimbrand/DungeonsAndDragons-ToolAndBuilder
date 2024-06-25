@@ -18,27 +18,31 @@ public class InventoryRepository : IInventoryRepository
         var database = client.GetDatabase(databaseName);
         _inventoryCollection = database.GetCollection<Inventory>(collectionName, new MongoCollectionSettings(){AssignIdOnInsert = true});
     }
-    public Task AddAsync(Inventory entity)
+    public async Task AddAsync(Inventory entity)
     {
         throw new NotImplementedException();
     }
-    public Task DeleteAsync(ObjectId id)
+    public async Task DeleteAsync(ObjectId id)
     {
         throw new NotImplementedException();
     }
-    public Task<IEnumerable<Inventory>> GetAllAsync()
+    public async Task<IEnumerable<Inventory>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
-    public Task<Inventory> GetByIdAsync(ObjectId id)
+    public async Task<Inventory> GetByIdAsync(ObjectId id)
     {
         throw new NotImplementedException();
     }
-    public Task<IEnumerable<Inventory>> GetMany(int start, int count)
+    public async Task<IEnumerable<Inventory>> GetMany(int start, int count)
     {
         throw new NotImplementedException();
     }
-    public Task UpdateAsync(Inventory entity)
+    public async Task UpdateAsync(Inventory entity)
+    {
+        throw new NotImplementedException();
+    }
+    public async Task<IEnumerable<Inventory>> GetByCharacterGuidAsync(ObjectId characterGuid)
     {
         throw new NotImplementedException();
     }
