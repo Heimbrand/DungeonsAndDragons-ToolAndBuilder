@@ -1,37 +1,93 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SideQuestRepository : ISideQuestRepository
+public class SideQuestRepository(DnDbContext context) : ISideQuestRepository
 {
-    public Task<SideQuest> GetByIdAsync(int id)
+    public async Task<SideQuest> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var sideQuestById = await context.SideQuests.FindAsync(id);
+
+        if (sideQuestById is null)
+            throw new Exception("No SideQuest found with that ID");
+
+        return sideQuestById;
     }
 
-    public Task<IEnumerable<SideQuest>> GetAllAsync()
+    public async Task<IEnumerable<SideQuest>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allSideQuests = await context.SideQuests.ToListAsync();
+
+        if (allSideQuests is null)
+            throw new Exception("No SideQuests found");
+
+        return allSideQuests;
     }
 
-    public Task<IEnumerable<SideQuest>> GetMany(int start, int count)
+    public async Task<IEnumerable<SideQuest>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySideQuests = await context.SideQuests.Skip(start).Take(count).ToListAsync();
+
+        if (getManySideQuests is null)
+            throw new Exception("No SideQuests found");
+
+
+        return getManySideQuests;
     }
 
-    public Task<SideQuest> AddAsync(SideQuest entity)
+    public async Task AddAsync(SideQuest entity)
     {
-        throw new NotImplementedException();
+        var addSideQuest = await context.SideQuests.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SideQuest> UpdateAsync(SideQuest entity)
+    public async Task UpdateAsync(SideQuest entity)
     {
-        throw new NotImplementedException();
+        var oldSideQuest = await context.SideQuests.FindAsync(entity.Id);
+
+        if (oldSideQuest is null)
+            throw new Exception("No SideQuest found with that ID");
+
+        context.Entry(oldSideQuest).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SideQuest> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var sideQuestToDelete = await context.SideQuests.FindAsync(id);
+
+        if (sideQuestToDelete is null)
+            throw new Exception("No SideQuest found with that ID");
+
+        context.SideQuests.Remove(sideQuestToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<SideQuest>> GetSideQuestByName(string name)
+    {
+        var sideQuestByName = await context.SideQuests.ToListAsync();
+
+        var fuzzyScored = sideQuestByName.Select(x => new
+        {
+            SideQuest = x,
+            Score = FuzzySharp.Fuzz.PartialRatio(x.Name, name)
+        })
+            .Where(x => x.Score > 80)
+            .OrderByDescending(x => x.Score)
+            .Select(x => x.SideQuest);
+
+        return fuzzyScored;
+    }
+
+    public async Task<IEnumerable<SideQuest>> GetSideQuestByRecommendedLevel(int RecommendedLevel)
+    {
+        var sideQuestsByRecommendedLevel = await context.SideQuests.Where(s => s.RecommendedLevel == RecommendedLevel).ToListAsync();
+
+        if (sideQuestsByRecommendedLevel is null)
+            throw new Exception("No SideQuests found with that Recommended Level");
+
+        return sideQuestsByRecommendedLevel;
     }
 }

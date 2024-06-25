@@ -1,37 +1,64 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SizeRepository : ISizeRepository
+public class SizeRepository(DnDbContext context) : ISizeRepository
 {
-    public Task<Size> GetByIdAsync(int id)
+    public async Task<Size> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var sizeById = await context.Sizes.FindAsync(id);
+
+        if (sizeById is null)
+            throw new Exception("No Size found with that ID");
+
+        return sizeById;
     }
 
-    public Task<IEnumerable<Size>> GetAllAsync()
+    public async Task<IEnumerable<Size>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allSizes = await context.Sizes.ToListAsync();
+
+        if (allSizes is null)
+            throw new Exception("No Sizes found");
+
+        return allSizes;
     }
 
-    public Task<IEnumerable<Size>> GetMany(int start, int count)
+    public async Task<IEnumerable<Size>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySizes = await context.Sizes.Skip(start).Take(count).ToListAsync();
+
+        if (getManySizes is null)
+            throw new Exception("No Sizes found");
+
+        return getManySizes;
     }
 
-    public Task<Size> AddAsync(Size entity)
+    public async Task AddAsync(Size entity)
     {
-        throw new NotImplementedException();
+        var addSize = await context.Sizes.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Size> UpdateAsync(Size entity)
+    public async Task UpdateAsync(Size entity)
     {
-        throw new NotImplementedException();
+        var oldSize = await context.Sizes.FindAsync(entity.Id);
+
+        if (oldSize is null)
+            throw new Exception("No Size found with that ID");
+
+        context.Entry(oldSize).CurrentValues.SetValues(entity);
     }
 
-    public Task<Size> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var sizeToDelete = await context.Sizes.FindAsync(id);
+
+        if (sizeToDelete is null)
+            throw new Exception("No Size found with that ID");
+
+        context.Sizes.Remove(sizeToDelete);
     }
 }

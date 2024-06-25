@@ -1,37 +1,86 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SubRaceRepository : ISubRaceRepository
+public class SubRaceRepository(DnDbContext context) : ISubRaceRepository
 {
-    public Task<SubRace> GetByIdAsync(int id)
+    public async Task<SubRace> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var subRaceById = await context.SubRaces.FindAsync(id);
+
+        if (subRaceById is null)
+            throw new Exception("No SubRace found with");
+
+        return subRaceById;
     }
 
-    public Task<IEnumerable<SubRace>> GetAllAsync()
+    public async Task<IEnumerable<SubRace>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allSubRaces = await context.SubRaces.ToListAsync();
+
+        if (allSubRaces is null)
+            throw new Exception("No SubRaces found");
+
+        return allSubRaces;
     }
 
-    public Task<IEnumerable<SubRace>> GetMany(int start, int count)
+    public async Task<IEnumerable<SubRace>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySubRaces = await context.SubRaces.Skip(start).Take(count).ToListAsync();
+
+        if (getManySubRaces is null)
+            throw new Exception("No SubRaces found");
+
+        return getManySubRaces;
     }
 
-    public Task<SubRace> AddAsync(SubRace entity)
+    public async Task AddAsync(SubRace entity)
     {
-        throw new NotImplementedException();
+        var addSubRace = await context.SubRaces.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SubRace> UpdateAsync(SubRace entity)
+    public async Task UpdateAsync(SubRace entity)
     {
-        throw new NotImplementedException();
+        var oldSubRace = await context.SubRaces.FindAsync(entity.Id);
+
+        if (oldSubRace is null)
+            throw new Exception("No SubRace found");
+
+        context.Entry(oldSubRace).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SubRace> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var subRaceToDelete = await context.SubRaces.FindAsync(id);
+
+        if (subRaceToDelete is null)
+            throw new Exception("No SubRace found");
+
+        context.SubRaces.Remove(subRaceToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<SubRace> GetSubRaceByCharacterId(int id)
+    {
+        var subRaceByCharacterId = await context.SubRaces.Where(x => x.CharacterId == id).FirstOrDefaultAsync();
+
+        if (subRaceByCharacterId is null)
+            throw new Exception("No SubRace found");
+
+        return subRaceByCharacterId;
+    }
+
+    public async Task<SubRace> GetSubRaceByNpcId(int id)
+    {
+        var subRaceByNpcId = await context.SubRaces.Where(x => x.NpcId == id).FirstOrDefaultAsync();
+
+        if (subRaceByNpcId is null)
+            throw new Exception("No SubRace found");
+
+        return subRaceByNpcId;
     }
 }

@@ -7,8 +7,8 @@ public interface IWeaponRepository : IRepository<Weapon, int>
 {
     Task<IEnumerable<Weapon>> GetWeaponByName(string name);
 
-    Task<IEnumerable<Weapon>> GetWeaponsByCharacterId(int characterId);
     Task<IEnumerable<Weapon>> GetWeaponsByType(string type);
     Task<IEnumerable<Weapon>> GetWeaponsByDamageType(string damageType);
     Task<IEnumerable<Weapon>> GetWeaponByRarity(string rarity);
+    Task<IEnumerable<Weapon>> GetWeaponByProperties(string properties);
 }

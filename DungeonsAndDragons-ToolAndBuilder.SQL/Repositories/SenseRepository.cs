@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SenseRepository : ISenseRepository
+public class SenseRepository(DnDbContext context) : ISenseRepository
 {
-    public Task<Sense> GetByIdAsync(int id)
+    public async Task<Sense> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var senseById = await context.Senses.FindAsync(id);
+
+        if (senseById is null)
+            throw new Exception("No Sense found with that ID");
+
+        return senseById;
     }
 
-    public Task<IEnumerable<Sense>> GetAllAsync()
+    public async Task<IEnumerable<Sense>> GetAllAsync()
     {
-        throw new NotImplementedException();
+       var allSenses = await context.Senses.ToListAsync();
+
+        if (allSenses is null)
+            throw new Exception("No Senses found");
+
+        return allSenses;
     }
 
-    public Task<IEnumerable<Sense>> GetMany(int start, int count)
+    public async Task<IEnumerable<Sense>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+         var getManySenses = await context.Senses.Skip(start).Take(count).ToListAsync();
+
+         if (getManySenses is null)
+            throw new Exception("No Senses found");
+
+         return getManySenses;
     }
 
-    public Task<Sense> AddAsync(Sense entity)
+    public async Task AddAsync(Sense entity)
     {
-        throw new NotImplementedException();
+        var addSense = await context.Senses.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Sense> UpdateAsync(Sense entity)
+    public async Task UpdateAsync(Sense entity)
     {
-        throw new NotImplementedException();
+        var oldSense = await context.Senses.FindAsync(entity.Id);
+
+        if (oldSense is null)
+            throw new Exception("No Sense found with that ID");
+
+        context.Entry(oldSense).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Sense> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var senseToDelete = await context.Senses.FindAsync(id);
+
+        if (senseToDelete is null)
+            throw new Exception("No Sense found with that ID");
+
+        context.Senses.Remove(senseToDelete);
+        context.SaveChangesAsync();
     }
 }

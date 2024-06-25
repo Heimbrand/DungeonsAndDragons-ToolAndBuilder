@@ -1,37 +1,75 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SkillRepository : ISkillRepository
+public class SkillRepository(DnDbContext context) : ISkillRepository
 {
-    public Task<Skill> GetByIdAsync(int id)
+    public async Task<Skill> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var skillById = await context.Skills.FindAsync(id);
+
+        if (skillById is null)
+            throw new Exception("No Skill found with that ID");
+
+        return skillById;
     }
 
-    public Task<IEnumerable<Skill>> GetAllAsync()
+    public async Task<IEnumerable<Skill>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allSkills = await context.Skills.ToListAsync();
+
+        if (allSkills is null)
+            throw new Exception("No Skills found");
+
+        return allSkills;
     }
 
-    public Task<IEnumerable<Skill>> GetMany(int start, int count)
+    public async Task<IEnumerable<Skill>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySkills = await context.Skills.Skip(start).Take(count).ToListAsync();
+
+        if (getManySkills is null)
+            throw new Exception("No Skills found");
+
+        return getManySkills;
     }
 
-    public Task<Skill> AddAsync(Skill entity)
+    public async Task AddAsync(Skill entity)
     {
-        throw new NotImplementedException();
+        var addSkill = await context.Skills.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Skill> UpdateAsync(Skill entity)
+    public async Task UpdateAsync(Skill entity)
     {
-        throw new NotImplementedException();
+       var oldSkill = await context.Skills.FindAsync(entity.Id);
+
+       if (oldSkill is null)
+              throw new Exception("No Skill found with that ID");
+
+       context.Entry(oldSkill).CurrentValues.SetValues(entity);
+       context.SaveChangesAsync();
     }
 
-    public Task<Skill> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var skillToDelete = await context.Skills.FindAsync(id);
+
+        if (skillToDelete is null)
+            throw new Exception("No Skill found with that ID");
+
+        context.Skills.Remove(skillToDelete);
+    }
+
+    public async Task<IEnumerable<Skill>> GetSkillsByCharacterId(int characterId)
+    {
+        var skillsByCharacterId = await context.Skills.Where(s => s.CharacterId == characterId).ToListAsync();
+
+        if (skillsByCharacterId is null)
+            throw new Exception("No Skills found for that Character");
+
+        return skillsByCharacterId;
     }
 }

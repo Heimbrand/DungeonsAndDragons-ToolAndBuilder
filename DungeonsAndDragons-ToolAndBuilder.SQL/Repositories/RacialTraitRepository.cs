@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class RacialTraitRepository : IRacialTraitRepository
+public class RacialTraitRepository(DnDbContext context) : IRacialTraitRepository
 {
-    public Task<RacialTrait> AddAsync(RacialTrait entity)
+    public async Task AddAsync(RacialTrait entity)
     {
-        throw new NotImplementedException();
+        var addRacialTrait = await context.RacialTraits.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<RacialTrait> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var racialTraitToDelete = await context.RacialTraits.FindAsync(id);
+
+        if (racialTraitToDelete is null) 
+            throw new Exception("No RacialTrait found with that ID");
+
+        context.RacialTraits.Remove(racialTraitToDelete);
+        context.SaveChangesAsync();
     }
 
-    public Task<IEnumerable<RacialTrait>> GetAllAsync()
+    public async Task<IEnumerable<RacialTrait>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allRacialTraits = await context.RacialTraits.ToListAsync();
+
+        if (allRacialTraits is null)
+            throw new Exception("No RacialTraits found");
+
+        return allRacialTraits;
     }
 
-    public Task<RacialTrait> GetByIdAsync(int id)
+    public async Task<RacialTrait> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var racialTraitById = await context.RacialTraits.FindAsync(id);
+
+        if (racialTraitById is null)
+            throw new Exception("No RacialTrait found with that ID");
+
+        return racialTraitById;
     }
 
-    public Task<IEnumerable<RacialTrait>> GetMany(int start, int count)
+    public async Task<IEnumerable<RacialTrait>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+       var getManyRacialTraits = await context.RacialTraits.Skip(start).Take(count).ToListAsync();
+
+        if (getManyRacialTraits is null)
+            throw new Exception("No RacialTraits found");
+
+        return getManyRacialTraits;
     }
 
-    public Task<RacialTrait> UpdateAsync(RacialTrait entity)
+    public async Task UpdateAsync(RacialTrait entity)
     {
-        throw new NotImplementedException();
+       var oldRacialTrait = await context.RacialTraits.FindAsync(entity.Id);
+
+       if (oldRacialTrait is null)
+            throw new Exception("No RacialTrait found with that ID");
+
+        context.Entry(oldRacialTrait).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 }

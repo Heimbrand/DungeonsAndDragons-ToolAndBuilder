@@ -1,37 +1,86 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SubClassRepository : ISubClassRepository
+public class SubClassRepository(DnDbContext context) : ISubClassRepository
 {
-    public Task<SubClass> GetByIdAsync(int id)
+    public async Task<SubClass> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var subClassById = await context.SubClasses.FindAsync(id);
+
+        if (subClassById is null)
+            throw new Exception("No SubClass found with that ID");
+
+        return subClassById;
     }
 
-    public Task<IEnumerable<SubClass>> GetAllAsync()
+    public async Task<IEnumerable<SubClass>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allSubClasses = await context.SubClasses.ToListAsync();
+
+        if (allSubClasses is null)
+            throw new Exception("No SubClasses found");
+
+        return allSubClasses;
     }
 
-    public Task<IEnumerable<SubClass>> GetMany(int start, int count)
+    public async Task<IEnumerable<SubClass>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySubClasses = await context.SubClasses.Skip(start).Take(count).ToListAsync();
+
+        if (getManySubClasses is null)
+            throw new Exception("No SubClasses found");
+
+        return getManySubClasses;
     }
 
-    public Task<SubClass> AddAsync(SubClass entity)
+    public async Task AddAsync(SubClass entity)
     {
-        throw new NotImplementedException();
+        var addSubClass = await context.SubClasses.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SubClass> UpdateAsync(SubClass entity)
+    public async Task UpdateAsync(SubClass entity)
     {
-        throw new NotImplementedException();
+        var oldSubClass = await context.SubClasses.FindAsync(entity.Id);
+
+        if (oldSubClass is null)
+            throw new Exception("No SubClass found with that ID");
+
+        context.Entry(oldSubClass).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SubClass> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var subClassToDelete = await context.SubClasses.FindAsync(id);
+
+        if (subClassToDelete is null)
+            throw new Exception("No SubClass found with that ID");
+
+        context.SubClasses.Remove(subClassToDelete);
+        context.SaveChangesAsync();
+    }
+
+    public async Task<SubClass> GetSubclassByCharacterId(int id)
+    {
+        var subClassByCharacterId = await context.SubClasses.Where(x => x.CharacterId == id).FirstOrDefaultAsync();
+
+        if (subClassByCharacterId is null)
+            throw new Exception("No SubClass found with that Character ID");
+
+        return subClassByCharacterId;
+    }
+
+    public async Task<SubClass> GetSubClassByNpcId(int id)
+    {
+        var subClassByNpcId = await context.SubClasses.Where(x => x.NpcId == id).FirstOrDefaultAsync();
+
+        if (subClassByNpcId is null)
+            throw new Exception("No SubClass found with that NPC ID");
+
+        return subClassByNpcId;
     }
 }

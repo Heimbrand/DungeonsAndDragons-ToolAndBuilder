@@ -5,5 +5,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface ISubRaceRepository : IRepository<SubRace, int>
 {
-    
+    Task<SubRace> GetSubRaceByCharacterId(int id);
+    Task<SubRace> GetSubRaceByNpcId(int id);
 }

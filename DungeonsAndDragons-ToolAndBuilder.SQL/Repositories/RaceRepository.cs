@@ -1,37 +1,66 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class RaceRepository : IRaceRepository
+public class RaceRepository(DnDbContext context) : IRaceRepository
 {
-    public Task<Race> GetByIdAsync(int id)
+    public async Task<Race> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var raceById = await context.Races.FindAsync(id);
+
+        if (raceById is null)
+            throw new Exception("no race with that ID found");
+
+        return raceById;
     }
 
-    public Task<IEnumerable<Race>> GetAllAsync()
+    public async Task<IEnumerable<Race>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var allRaces = await context.Races.ToListAsync();
+
+        if (allRaces is null)
+            throw new Exception("No Races found");
+
+        return allRaces;
     }
 
-    public Task<IEnumerable<Race>> GetMany(int start, int count)
+    public async Task<IEnumerable<Race>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManyRaces = await context.Races.Skip(start).Take(count).ToListAsync();
+
+        if (getManyRaces is null)
+            throw new Exception("No Races found");
+
+        return getManyRaces;
     }
 
-    public Task<Race> AddAsync(Race entity)
+    public async Task AddAsync(Race entity)
     {
-        throw new NotImplementedException();
+        var addRace = await context.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Race> UpdateAsync(Race entity)
+    public async Task UpdateAsync(Race entity)
     {
-        throw new NotImplementedException();
+        var oldRace = await context.Races.FindAsync(entity.Id);
+
+        if (oldRace is null)
+            throw new Exception("No Race found");
+
+        context.Entry(oldRace).CurrentValues.SetValues(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<Race> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var raceToDelete = await context.Races.FindAsync(id);
+
+        if (raceToDelete is null)
+            throw new Exception("No Race found");
+
+        context.Remove(raceToDelete);
+        context.SaveChangesAsync();
     }
 }

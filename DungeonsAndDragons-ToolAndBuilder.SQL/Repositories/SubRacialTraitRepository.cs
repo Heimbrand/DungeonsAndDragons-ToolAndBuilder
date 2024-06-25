@@ -1,37 +1,65 @@
 ﻿using DungeonsAndDragons_ToolAndBuilder.Shared.Entities;
 using DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.Repositories;
 
-public class SubRacialTraitRepository : ISubRacialTraitRepository
+public class SubRacialTraitRepository(DnDbContext context) : ISubRacialTraitRepository
 {
-    public Task<SubRacialTrait> AddAsync(SubRacialTrait entity)
+    public async Task AddAsync(SubRacialTrait entity)
     {
-        throw new NotImplementedException();
+        var addSubRacialTrait = await context.SubRacialTraits.AddAsync(entity);
+        context.SaveChangesAsync();
     }
 
-    public Task<SubRacialTrait> DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var subRacialTraitToDelete = await context.SubRacialTraits.FindAsync(id);
+
+        if (subRacialTraitToDelete is null)
+            throw new Exception("No SubRacialTrait found with that ID");
+
+        context.SubRacialTraits.Remove(subRacialTraitToDelete);
+        context.SaveChangesAsync();
     }
 
-    public Task<IEnumerable<SubRacialTrait>> GetAllAsync()
+    public async Task<IEnumerable<SubRacialTrait>> GetAllAsync()
     {
-        throw new NotImplementedException();
+       var allSubRacialTraits = await context.SubRacialTraits.ToListAsync();
+
+        if (allSubRacialTraits is null)
+            throw new Exception("No SubRacialTraits found");
+
+        return allSubRacialTraits;
     }
 
-    public Task<SubRacialTrait> GetByIdAsync(int id)
+    public async Task<SubRacialTrait> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var subRacialTraitById = await context.SubRacialTraits.FindAsync(id);
+
+        if (subRacialTraitById is null)
+            throw new Exception("No SubRacialTrait found with that ID");
+
+        return subRacialTraitById;
     }
 
-    public Task<IEnumerable<SubRacialTrait>> GetMany(int start, int count)
+    public async Task<IEnumerable<SubRacialTrait>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+        var getManySubRacialTraits = await context.SubRacialTraits.Skip(start).Take(count).ToListAsync();
+
+        if (getManySubRacialTraits is null)
+            throw new Exception("No SubRacialTraits found");
+
+        return getManySubRacialTraits;
     }
 
-    public Task<SubRacialTrait> UpdateAsync(SubRacialTrait entity)
+    public async Task UpdateAsync(SubRacialTrait entity)
     {
-        throw new NotImplementedException();
+        var oldSubRacialTrait = await context.SubRacialTraits.FindAsync(entity.Id);
+
+        if (oldSubRacialTrait is null)
+            throw new Exception("No SubRacialTrait found with that ID");
+
+        context.Entry(oldSubRacialTrait).CurrentValues.SetValues(entity);
     }
 }
