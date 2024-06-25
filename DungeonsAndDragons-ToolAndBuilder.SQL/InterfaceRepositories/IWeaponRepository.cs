@@ -5,7 +5,7 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IWeaponRepository : IRepository<Weapon, int>
 {
-    Task<Weapon> GetWeaponByName(string name);
+    Task<IEnumerable<Weapon>> GetWeaponByName(string name);
 
     Task<IEnumerable<Weapon>> GetWeaponsByCharacterId(int characterId);
     Task<IEnumerable<Weapon>> GetWeaponsByType(string type);

@@ -6,6 +6,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 public interface IFactionRepository : IRepository<Faction, int>
 {
     Task<IEnumerable<Faction>> GetAllPre5EFactions();
-    Task<Faction> GetFactionByName(string name);
+    Task<IEnumerable<Faction>> GetFactionByName(string name);
 
 }

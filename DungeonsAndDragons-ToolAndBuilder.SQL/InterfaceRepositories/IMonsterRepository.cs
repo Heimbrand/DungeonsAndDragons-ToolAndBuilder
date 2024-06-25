@@ -5,7 +5,7 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
 public interface IMonsterRepository : IRepository<Monster, int>
 {
-    Task<Monster> GetMonsterByName(string name);
+    Task<IEnumerable<Monster>> GetMonsterByName(string name);
     Task<IEnumerable<Monster>> GetMonstersByChallengeRating(int challengeRating);
     Task<IEnumerable<Monster>> GetMonstersByType(string type);
     Task<IEnumerable<Monster>> GetMonstersBySize(string size);
