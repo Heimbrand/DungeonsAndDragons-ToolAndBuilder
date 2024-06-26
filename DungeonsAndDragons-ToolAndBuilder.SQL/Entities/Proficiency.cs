@@ -2,10 +2,8 @@
 
 public class Proficiency : BaseEntity
 {
-    public int ClassId { get; set; }
-    public int SubClassId { get; set; }
-    public int RaceId { get; set; }
-    public int SubRaceId { get; set; }
+    public int CharacterId { get; set; }
+    public int ProficiencyId { get; set; }
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public int SkillBonus { get; set; }

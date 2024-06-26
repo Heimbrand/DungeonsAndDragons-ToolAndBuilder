@@ -12,7 +12,7 @@ public class SubClass : BaseEntity
 
 
     public ICollection<SubClassFeature>? SubClassFeatures { get; set; }
-    public ICollection<Proficiency>? Proficiencies { get; set; }
+  
     
 
 

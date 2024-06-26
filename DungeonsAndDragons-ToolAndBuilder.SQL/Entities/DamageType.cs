@@ -7,7 +7,7 @@ public class DamageType : BaseEntity
     public int NpcId { get; set; }
     public string Name { get; set; } = default!; //Fire Resistance, Cold Immunity, Fire Vulnerability etc
     public string Description { get; set; } = default!;
-    public ICollection<Tag>? DamageTypeTags { get; set; }
+   
     public bool IsPre5E { get; set; } = default!;
 
 }

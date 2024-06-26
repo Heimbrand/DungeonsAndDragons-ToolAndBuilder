@@ -11,6 +11,6 @@ public class Class : BaseEntity
 
 
     public ICollection<ClassFeature>? ClassFeatures { get; set; }
-    public ICollection<Proficiency>? Proficiencies { get; set; }
+   
 
 }

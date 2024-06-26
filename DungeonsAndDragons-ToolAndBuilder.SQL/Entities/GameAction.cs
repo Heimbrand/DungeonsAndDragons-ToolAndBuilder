@@ -22,7 +22,7 @@ public class GameAction : BaseEntity
     public bool IsStandardAction { get; set; }
     public bool IsPre5E { get; set; } = default!;
 
-    public ICollection<Tag>? GameActionTags { get; set; }
+   
 
 
 }

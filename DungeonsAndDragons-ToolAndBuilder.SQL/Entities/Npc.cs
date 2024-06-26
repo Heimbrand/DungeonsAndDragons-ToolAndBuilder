@@ -2,7 +2,7 @@
 
 public class Npc : BaseEntity
 {
-    
+
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
     public string? CharacterImg { get; set; }
@@ -38,7 +38,7 @@ public class Npc : BaseEntity
     public Size? Size { get; set; }
     public Faction? Faction { get; set; }
 
-    public ICollection<Tag>? NpcTags { get; set; }
+    public ICollection<Proficiency>? Proficiencies { get; set; }
     public ICollection<Feat>? Feats { get; set; }
     public ICollection<Condition>? Conditions { get; set; } //poisoned, paralyzed, immunities, etc
     public ICollection<Language>? Languages { get; set; }
@@ -49,4 +49,4 @@ public class Npc : BaseEntity
     public ICollection<GameAction>? Actions { get; set; }
 
 
-}   
+}

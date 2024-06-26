@@ -7,7 +7,6 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL;
 
 public class DnDbContext : DbContext
 {
-
     public DbSet<Alignment> Alignments { get; set; }
     public DbSet<Armor> Armors { get; set; }
     public DbSet<Character> Characters { get; set; }
@@ -47,8 +46,10 @@ public class DnDbContext : DbContext
     public DbSet<Tag> Tags { get; set; }
     public DbSet<Weapon> Weapons { get; set; }
     public DbSet<World> Worlds { get; set; }
+
     public DnDbContext(DbContextOptions<DnDbContext> options) : base(options)
     {
-        
+
     }
+
 }

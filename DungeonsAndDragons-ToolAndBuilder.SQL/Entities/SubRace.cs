@@ -10,7 +10,7 @@ public class SubRace : BaseEntity
     public bool IsPre5E { get; set; } = default!;
 
 
-    public ICollection<Proficiency>? Proficiencies { get; set; }
+  
     public ICollection<SubRacialTrait>? SubRacialTraits { get; set; }
 
 }

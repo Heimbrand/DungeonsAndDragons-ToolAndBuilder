@@ -12,7 +12,7 @@ public class Race : BaseEntity
 
 
 
-    public ICollection<Proficiency>? Proficiencies { get; set; }
+   
     public ICollection<RacialTrait>? RacialTraits { get; set; }
 
 }

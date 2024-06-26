@@ -1,6 +1,19 @@
+using DungeonsAndDragons_ToolAndBuilder.SQL;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Dependency inject the extensions
+
+var connectionString = builder.Configuration.GetConnectionString("DnDToolAndBuilder");
+builder.Services.AddDbContext<DnDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
+
+
+
+
+
 
 var app = builder.Build();
 

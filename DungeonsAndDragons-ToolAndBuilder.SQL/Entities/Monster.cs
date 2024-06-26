@@ -18,7 +18,6 @@ public class Monster : BaseEntity
     public Faction? Faction { get; set; }
 
     public ICollection<MonsterTrait>? Traits { get; set; }
-    public ICollection<Tag>? MonsterTags { get; set; }
     public ICollection<Condition>? Conditions { get; set; }
     public ICollection<DamageType>? DamageTypes { get; set; }
     public ICollection<Sense>? Senses { get; set; }
