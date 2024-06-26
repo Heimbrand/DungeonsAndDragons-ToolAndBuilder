@@ -20,30 +20,56 @@ public class InventoryRepository : IInventoryRepository
     }
     public async Task AddAsync(Inventory entity)
     {
-        throw new NotImplementedException();
+        await _inventoryCollection.InsertOneAsync(entity);
     }
     public async Task DeleteAsync(ObjectId id)
     {
-        throw new NotImplementedException();
+        await _inventoryCollection.DeleteOneAsync(x => x.Id == id);
     }
     public async Task<IEnumerable<Inventory>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var filter = Builders<Inventory>.Filter.Empty;
+
+        if (filter is null)
+            throw new Exception("No inventories found");
+
+        return await _inventoryCollection.Find(filter).ToListAsync();
     }
     public async Task<Inventory> GetByIdAsync(ObjectId id)
     {
-        throw new NotImplementedException();
+        var filter = Builders<Inventory>.Filter.Eq(x => x.Id, id);
+
+        if (filter is null)
+            throw new Exception("No inventory found");
+
+        return await _inventoryCollection.Find(filter).FirstOrDefaultAsync();
+
     }
     public async Task<IEnumerable<Inventory>> GetMany(int start, int count)
     {
-        throw new NotImplementedException();
+       var filter = Builders<Inventory>.Filter.Empty;
+
+        if (filter is null)
+            throw new Exception("No inventories found");
+
+        return await _inventoryCollection.Find(filter).Skip(start).Limit(count).ToListAsync();
     }
     public async Task UpdateAsync(Inventory entity)
     {
-        throw new NotImplementedException();
+        var filter = Builders<Inventory>.Filter.Eq(x => x.Id, entity.Id);
+
+        if (filter is null)
+            throw new Exception("No inventory found");
+
+        await _inventoryCollection.ReplaceOneAsync(filter, entity);
     }
-    public async Task<IEnumerable<Inventory>> GetByCharacterGuidAsync(ObjectId characterGuid)
+    public async Task<IEnumerable<Inventory>> GetInventoryByCharacterGuid(ObjectId characterGuid)
     {
-        throw new NotImplementedException();
+        var filter = Builders<Inventory>.Filter.Eq(x => x.CharacterGuid, characterGuid);
+
+        if (filter is null)
+            throw new Exception("No inventory found");
+
+        return await _inventoryCollection.Find(filter).ToListAsync();
     }
 }
