@@ -1,7 +1,8 @@
 
 
 ### Todo
-* Add-migration && Update-Database
+* Potential "DM" entity?
+* Journal entity for every character
 * If everything works: Seed data
 * Api-Specification
 * Create Minimal API 
