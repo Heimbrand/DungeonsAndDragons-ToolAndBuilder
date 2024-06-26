@@ -1,8 +1,6 @@
 
 
 ### Todo
-* Write Methods in MongoDb repos
-* change return in all byName methods to return fuzzyScored
 * Add-migration && Update-Database
 * If everything works: Seed data
 * Api-Specification

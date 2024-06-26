@@ -71,7 +71,7 @@ public class ConditionRepository(DnDbContext context) : IConditionRepository
             .Where(x => x.Score > 80)
             .OrderByDescending(x => x.Score)
             .Select(x => x.Condition);
-        return conditionByName; 
+        return fuzzyScore; 
     }
     public async Task<IEnumerable<Condition>> GetManyPre5EConditions(int start, int count)
     {

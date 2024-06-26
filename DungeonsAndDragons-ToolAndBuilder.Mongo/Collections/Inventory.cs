@@ -9,10 +9,10 @@ public class Inventory : BaseDocument
     public double MaxWeight { get; set; }
     public double CurrentWeight { get; set; }
     public string? InventoryImg { get; set; }
-    public bool Encumbrance { get; set; } // if the player can be encumbered or not
+    public bool IsEncumberenceOff { get; set; } // if the player can be encumbered or not
     public bool IsEncumbered { get; set; } // if the player is encumbered or not
 
-    public List<InventoryItems>? Items { get; set; }
+    public InventoryItems Items { get; set; } = default!;
     public CoinPouch CoinPouch { get; set; } = default!;
 
 }

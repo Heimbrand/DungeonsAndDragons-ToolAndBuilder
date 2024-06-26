@@ -88,7 +88,7 @@ public class FactionRepository(DnDbContext context) : IFactionRepository
             .OrderByDescending(f => f.Score)
             .Select(f => f.Faction);
 
-        return factionByName;
+        return fuzzyScored;
 
     }
 }

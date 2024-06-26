@@ -80,7 +80,7 @@ public class ConsumableRepository(DnDbContext context) : IConsumableRepository
         if (fuzzyScored is null)
             throw new Exception("No Consumable found with that name");
 
-        return ConsumableByName;
+        return fuzzyScored;
     }
 
     public async Task<IEnumerable<Consumable>> GetConsumablesByRarity(string rarity)

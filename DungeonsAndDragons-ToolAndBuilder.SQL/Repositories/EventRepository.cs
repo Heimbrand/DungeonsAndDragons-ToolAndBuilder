@@ -77,6 +77,6 @@ public class EventRepository(DnDbContext context) : IEventRepository
             .OrderByDescending(x => x.Score)
             .Select(x => x.Event);
 
-        return eventByName;
+        return fuzzyScored;
     }
 }

@@ -77,7 +77,7 @@ public class FeatRepository(DnDbContext context) : IFeatRepository
             .OrderByDescending(f => f.Score)
             .Select(f => f.Feat);
 
-        return featByName;
+        return fuzzyScored;
     }
 
     public async Task<IEnumerable<Feat>> GetManyPre5EFeats(int start, int count)

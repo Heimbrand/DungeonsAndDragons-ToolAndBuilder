@@ -20,17 +20,17 @@ public class CraftingRepository : ICraftingRepository
         throw new NotImplementedException();
     }
 
-    public Task<Crafting> AddAsync(Crafting entity)
+    public Task AddAsync(Crafting entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Crafting> UpdateAsync(Crafting entity)
+    public Task UpdateAsync(Crafting entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Crafting> DeleteAsync(int id)
+    public Task DeleteAsync(int id)
     {
         throw new NotImplementedException();
     }

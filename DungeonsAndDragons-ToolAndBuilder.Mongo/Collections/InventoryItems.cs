@@ -4,10 +4,10 @@ namespace DungeonsAndDragons_ToolAndBuilder.Shared.Collections;
 
 public class InventoryItems : BaseDocument
 {
-    public Armor? Armor { get; set; }
-    public Weapon? Weapon { get; set; }
-    public QuestItem? QuestItem { get; set; }
-    public Consumable? Consumable { get; set; }
-    public MiscellaneousItem? MiscellaneousItem { get; set; } 
-    public MagicalArtifact? MagicalArtifact { get; set; }
+    public List<Armor>? Armors { get; set; }
+    public List<Weapon>? Weapons { get; set; }
+    public List<QuestItem>? QuestItems { get; set; }
+    public List<Consumable> Consumables { get; set; }
+    public List<MiscellaneousItem>? MiscellaneousItems { get; set; } 
+    public List<MagicalArtifact>? MagicalArtifacts { get; set; }
 }
