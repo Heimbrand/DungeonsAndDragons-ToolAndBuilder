@@ -46,6 +46,8 @@ public class DnDbContext : DbContext
     public DbSet<Tag> Tags { get; set; }
     public DbSet<Weapon> Weapons { get; set; }
     public DbSet<World> Worlds { get; set; }
+    public DbSet<Journal> Journals { get; set; }
+    public DbSet<DungeonMaster> DungeonMasters { get; set; }
 
     public DnDbContext(DbContextOptions<DnDbContext> options) : base(options)
     {

@@ -29,6 +29,7 @@ public class Character : BaseEntity
     public int? Wisdom { get; set; }
     public int? Charisma { get; set; }
 
+    public Journal? Journal { get; set; }
     public Race? Race { get; set; }
     public SubRace? SubRace { get; set; }
     public Class? Class { get; set; } = default!;

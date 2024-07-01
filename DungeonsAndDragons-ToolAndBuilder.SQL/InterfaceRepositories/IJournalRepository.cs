@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface IJournal : IRepository<Journal, int>
+public interface IJournalRepository : IRepository<Journal, int>
 {
     
 }

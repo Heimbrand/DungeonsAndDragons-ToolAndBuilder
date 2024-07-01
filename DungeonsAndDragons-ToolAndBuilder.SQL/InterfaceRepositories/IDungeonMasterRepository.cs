@@ -3,7 +3,7 @@ using DungeonsAndDragons_ToolAndBuilder.Shared.Interfaces;
 
 namespace DungeonsAndDragons_ToolAndBuilder.SQL.InterfaceRepositories;
 
-public interface IDungeonMaster : IRepository<DungeonMaster, int>
+public interface IDungeonMasterRepository : IRepository<DungeonMaster, int>
 {
     
 }

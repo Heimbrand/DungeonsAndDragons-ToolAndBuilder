@@ -1,9 +1,8 @@
 
 
 ### Todo
-* Finalize interface repos and repos for Journal and DungeonMaster. 
-* Finalize the entities for them aswell
-* If everything works: Seed data
+
+* If everything works: Seed data (Only a small fraction, seeding everything atm ís too much)
 * Api-Specification
 * Create Minimal API 
 * Check all endpoints with Postman
@@ -13,7 +12,7 @@
 
 
 ## Currently working on:
-Writing methods in SQL repos 
+Seeding data
 
 
 
