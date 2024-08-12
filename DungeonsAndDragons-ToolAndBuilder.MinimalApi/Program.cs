@@ -11,6 +11,7 @@ builder.Services.AddDbContext<DnDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<ICharacterRepository,CharacterRepository>();
+builder.Services.AddScoped<IMonsterRepository,MonsterRepository>();
 
 
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<ICharacterRepository,CharacterRepository>();
 
 var app = builder.Build();
 app.MapCharacterEndpoints();
+app.MapMonsterEndpoints();
 
 
 app.UseHttpsRedirection();
