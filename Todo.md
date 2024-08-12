@@ -12,7 +12,7 @@
 
 
 ## Currently working on:
-Seeding data
+Creatng the Minimal Api
 
 
 
