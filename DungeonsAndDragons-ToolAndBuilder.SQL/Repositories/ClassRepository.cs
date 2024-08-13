@@ -47,6 +47,7 @@ public class ClassRepository(DnDbContext context) : IClassRepository
 
         context.Entry(oldCondition).CurrentValues.SetValues(entity);
         context.SaveChangesAsync();
+
     }
     public async Task DeleteAsync(int id)
     {

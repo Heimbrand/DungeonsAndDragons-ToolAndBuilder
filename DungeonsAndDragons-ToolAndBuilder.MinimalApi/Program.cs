@@ -13,6 +13,8 @@ builder.Services.AddDbContext<DnDbContext>(options =>
 builder.Services.AddScoped<ICharacterRepository,CharacterRepository>();
 builder.Services.AddScoped<IMonsterRepository,MonsterRepository>();
 builder.Services.AddScoped<IAlignmentRepository, AlignmentRepository>();
+builder.Services.AddScoped<IArmorRepository, ArmorRepository>();
+builder.Services.AddScoped<IClassRepository, ClassRepository>();
 
 
 
@@ -25,6 +27,8 @@ var app = builder.Build();
 app.MapCharacterEndpoints();
 app.MapMonsterEndpoints();
 app.MapAlignmentEndpoints();
+app.MapArmorEndpoints();
+app.MapClassEndpoints();
 
 
 
