@@ -83,7 +83,7 @@ public static class CharacterEndpointExtensions
 
         await repo.AddAsync(newCharacter);
 
-        return Results.Ok(newCharacter);
+        return Results.Created($"/api/Characters/{newCharacter.Id}",newCharacter);
     }
     private static async Task<IResult> UpdateCharacter(CharacterRepository repo, Character updateCharacter)
     {
