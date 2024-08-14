@@ -15,6 +15,8 @@ builder.Services.AddScoped<IMonsterRepository,MonsterRepository>();
 builder.Services.AddScoped<IAlignmentRepository, AlignmentRepository>();
 builder.Services.AddScoped<IArmorRepository, ArmorRepository>();
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
+builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
+builder.Services.AddScoped<IConsumableRepository, ConsumableRepository>();
 
 
 
@@ -29,6 +31,8 @@ app.MapMonsterEndpoints();
 app.MapAlignmentEndpoints();
 app.MapArmorEndpoints();
 app.MapClassEndpoints();
+app.MapConditionEndpoints();
+app.MapConsumableEndpoints();
 
 
 

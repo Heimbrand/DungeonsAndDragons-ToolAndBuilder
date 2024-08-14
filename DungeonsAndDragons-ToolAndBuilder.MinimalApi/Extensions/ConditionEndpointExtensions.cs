@@ -9,6 +9,15 @@ public static class ConditionEndpointExtensions
     {
         var group = app.MapGroup("api/Conditions");
 
+        group.MapGet("/{id}", GetConditionsById);
+        group.MapGet("", GetAllConditions);
+        group.MapGet("/GetMany/{start}/{count}", GetManyConditions);
+        group.MapGet("/GetByName/{name}", GetConditionByName);
+        group.MapGet("/GetPre5e/{start}/{count}", GetManyPre5eConditions);
+        group.MapPost("/", AddCondition);
+        group.MapPut("/", UpdateCondition);
+        group.MapDelete("/{id}", DeleteCondition);
+
         return app;
 
     }
