@@ -20,11 +20,6 @@ builder.Services.AddScoped<IConsumableRepository, ConsumableRepository>();
 
 
 
-
-
-
-
-
 var app = builder.Build();
 app.MapCharacterEndpoints();
 app.MapMonsterEndpoints();
