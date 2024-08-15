@@ -17,8 +17,10 @@ builder.Services.AddScoped<IArmorRepository, ArmorRepository>();
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
 builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
 builder.Services.AddScoped<IConsumableRepository, ConsumableRepository>();
-
-
+builder.Services.AddScoped<IDamageTypeRepository, DamageTypeRepository>();
+builder.Services.AddScoped<IDungeonMasterRepository, DungeonMasterRepository>();
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IFactionRepository, FactionRepository>();
 
 var app = builder.Build();
 app.MapCharacterEndpoints();
@@ -28,8 +30,10 @@ app.MapArmorEndpoints();
 app.MapClassEndpoints();
 app.MapConditionEndpoints();
 app.MapConsumableEndpoints();
-
-
+app.MapDamageTypeEndpoints();
+app.MapDungeonMasterEndpoints();
+app.MapEventEndpoints();
+app.MapFactionEndpoints();
 
 app.Run();
 
