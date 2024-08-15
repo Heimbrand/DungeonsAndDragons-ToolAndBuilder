@@ -21,6 +21,7 @@ builder.Services.AddScoped<IDamageTypeRepository, DamageTypeRepository>();
 builder.Services.AddScoped<IDungeonMasterRepository, DungeonMasterRepository>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IFactionRepository, FactionRepository>();
+builder.Services.AddScoped<IFeatRepository, FeatRepository>();
 
 var app = builder.Build();
 app.MapCharacterEndpoints();
@@ -34,6 +35,7 @@ app.MapDamageTypeEndpoints();
 app.MapDungeonMasterEndpoints();
 app.MapEventEndpoints();
 app.MapFactionEndpoints();
+app.MapFeatEndpoints();
 
 app.Run();
 
