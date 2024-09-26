@@ -39,14 +39,14 @@ public class Character : BaseEntity
     public Size? Size { get; set; }
     public Faction? Faction { get; set; }
 
-    public ICollection<Proficiency> Proficiencies { get; set; }
-    public ICollection<Feat>? Feats { get; set; }
-    public ICollection<Condition>? Conditions { get; set; } //poisoned, paralyzed, immunities, etc
-    public ICollection<Language>? Languages { get; set; }
-    public ICollection<Skill>? Skills { get; set; }
-    public ICollection<Sense>? Senses { get; set; }
-    public ICollection<DamageType>? DamageTypes { get; set; } //resistances, immunities, vulnerabilities
-    public ICollection<Reaction>? Reactions { get; set; }
-    public ICollection<GameAction>? Actions { get; set; }
+    public ICollection<Proficiency> Proficiencies { get; set; } = new List<Proficiency>();
+    public ICollection<Feat>? Feats { get; set; } = new List<Feat>();
+    public ICollection<Condition>? Conditions { get; set; } = new List<Condition>(); //poisoned, paralyzed, immunities, etc
+    public ICollection<Language>? Languages { get; set; } = new List<Language>();
+    public ICollection<Skill>? Skills { get; set; } = new List<Skill>();
+    public ICollection<Sense>? Senses { get; set; } = new List<Sense>();
+    public ICollection<DamageType>? DamageTypes { get; set; } = new List<DamageType>(); //resistances, immunities, vulnerabilities
+    public ICollection<Reaction>? Reactions { get; set; } = new List<Reaction>();
+    public ICollection<GameAction>? Actions { get; set; } = new List<GameAction>();
 }
 
