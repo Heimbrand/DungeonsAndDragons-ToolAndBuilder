@@ -36,7 +36,7 @@ public class Character : BaseEntity
     public SubClass? SubClass { get; set; }
 
     public Alignment? Alignment { get; set; }
-    public Size? Size { get; set; }
+    public Size? Size { get; set; } // Better suited as an enum perhaps?
     public Faction? Faction { get; set; }
 
     public ICollection<Proficiency> Proficiencies { get; set; } = new List<Proficiency>();

@@ -11,7 +11,7 @@ public class CharacterRepository(DnDbContext context) : ICharacterRepository
         var characterById = await context.Characters.FindAsync(id);
 
         if (characterById is null)
-            throw new Exception("Character not found");
+            throw new KeyNotFoundException($"Character with the id: {id} not found");
 
         return characterById;
         
@@ -41,12 +41,7 @@ public class CharacterRepository(DnDbContext context) : ICharacterRepository
     }
     public async Task UpdateAsync(Character entity)
     {
-        var oldCharacter = await context.Characters.FindAsync(entity.Id);
-
-        if (oldCharacter is null)
-            throw new Exception("Character not found");
-
-        context.Entry(oldCharacter).CurrentValues.SetValues(entity);
+        var updateCharacter = context.Characters.Update(entity);
         await context.SaveChangesAsync();
     }
     public async Task DeleteAsync(int id)
