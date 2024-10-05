@@ -49,7 +49,11 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NpcId")
+                    b.Property<int>("" +
+                                    "NpcId" +
+                                    "" +
+                                    "" +
+                                    "")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

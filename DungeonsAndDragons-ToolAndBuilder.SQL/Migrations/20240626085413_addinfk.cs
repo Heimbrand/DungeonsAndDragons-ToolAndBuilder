@@ -11,7 +11,11 @@ namespace DungeonsAndDragons_ToolAndBuilder.SQL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "NpcId",
+                name: "" +
+                      "NpcId" +
+                      "" +
+                      "" +
+                      "",
                 table: "Proficiencies",
                 type: "int",
                 nullable: true);

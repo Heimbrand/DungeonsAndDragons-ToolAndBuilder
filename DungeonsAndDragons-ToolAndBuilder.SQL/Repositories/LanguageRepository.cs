@@ -63,13 +63,6 @@ public class LanguageRepository(DnDbContext context) : ILanguageRepository
         context.Languages.Remove(languageToDelete);
         context.SaveChangesAsync();
     }
-
-    public async Task<IEnumerable<Language>> GetLanguagesByNpcId(int NpcId)
-    {
-        var languagesByNpcId = await context.Languages.Where(l => l.NpcId == NpcId).ToListAsync();
-        return languagesByNpcId;
-    }
-
     public async Task<IEnumerable<Language>> GetLanguagesByCharacterId(int characterId)
     {
         var languagesByCharacterId = await context.Languages.Where(l => l.CharacterId == characterId).ToListAsync();

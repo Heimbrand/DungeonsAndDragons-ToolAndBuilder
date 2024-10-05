@@ -74,13 +74,5 @@ public class SubRaceRepository(DnDbContext context) : ISubRaceRepository
         return subRaceByCharacterId;
     }
 
-    public async Task<SubRace> GetSubRaceByNpcId(int id)
-    {
-        var subRaceByNpcId = await context.SubRaces.Where(x => x.NpcId == id).FirstOrDefaultAsync();
-
-        if (subRaceByNpcId is null)
-            throw new Exception("No SubRace found");
-
-        return subRaceByNpcId;
-    }
+   
 }

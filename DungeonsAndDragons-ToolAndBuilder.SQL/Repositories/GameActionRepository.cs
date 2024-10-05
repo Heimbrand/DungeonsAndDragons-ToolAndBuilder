@@ -89,17 +89,6 @@ public class GameActionRepository(DnDbContext context) : IGameActionRepository
 
         return gameActionsByCharacterId;
     }
-
-    public async Task<IEnumerable<GameAction>> GetGameActionsByNpcId(int NpcId)
-    {
-       var gameActionByNpcId = await context.GameActions.Where(x => x.NpcId == NpcId).ToListAsync();
-
-        if (gameActionByNpcId is null)
-            throw new Exception("No GameActions found with that NPC ID");
-
-        return gameActionByNpcId;
-    }
-
     public async Task<IEnumerable<GameAction>> GetManyPre5EGameActions(int start, int count)
     {
         var manyPre5EGameActions = await context.GameActions.Where(x => x.IsPre5E == true).Skip(start).Take(count).ToListAsync();

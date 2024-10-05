@@ -4,7 +4,7 @@ public class Size : BaseEntity
 {
     public int MonsterId { get; set; }
     public int CharacterId { get; set; }
-    public int NpcId { get; set; }  
+    
     public string Name { get; set; } = default!;
     public bool IsPre5E { get; set; } = default!;
 }

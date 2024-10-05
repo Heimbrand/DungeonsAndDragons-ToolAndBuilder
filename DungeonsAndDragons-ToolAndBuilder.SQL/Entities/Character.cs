@@ -4,6 +4,7 @@ public class Character : BaseEntity
 {
     public Guid CharacterGuid { get; set; }
     public string Name { get; set; } = default!;
+    public bool IsNpc { get; set; }
     public string? Description { get; set; }
     public string? CharacterImg { get; set; }
     public int? ArmorClass { get; set; }
@@ -39,8 +40,9 @@ public class Character : BaseEntity
     public Size? Size { get; set; } // Better suited as an enum perhaps?
     public Faction? Faction { get; set; }
 
+    public ICollection<EquippedGear> EquippedGear { get; set; } = new List<EquippedGear>(); 
     public ICollection<Proficiency> Proficiencies { get; set; } = new List<Proficiency>();
-    public ICollection<Feat>? Feats { get; set; } = new List<Feat>();
+    public ICollection<Feat>? Feats { get; set; } = new List<Feat>(); // Feats are achieved after certain levels, or through other means. They are not class specific.
     public ICollection<Condition>? Conditions { get; set; } = new List<Condition>(); //poisoned, paralyzed, immunities, etc
     public ICollection<Language>? Languages { get; set; } = new List<Language>();
     public ICollection<Skill>? Skills { get; set; } = new List<Skill>();

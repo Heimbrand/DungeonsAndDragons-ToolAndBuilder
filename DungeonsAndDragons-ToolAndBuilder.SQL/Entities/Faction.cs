@@ -3,7 +3,7 @@
 public class Faction : BaseEntity
 {
     public int CharacterId { get; set; }
-    public int NpcId { get; set; }
+
     public int MonsterId { get; set; }
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;

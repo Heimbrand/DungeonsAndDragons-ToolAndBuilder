@@ -74,13 +74,5 @@ public class SubClassRepository(DnDbContext context) : ISubClassRepository
         return subClassByCharacterId;
     }
 
-    public async Task<SubClass> GetSubClassByNpcId(int id)
-    {
-        var subClassByNpcId = await context.SubClasses.Where(x => x.NpcId == id).FirstOrDefaultAsync();
-
-        if (subClassByNpcId is null)
-            throw new Exception("No SubClass found with that NPC ID");
-
-        return subClassByNpcId;
-    }
+  
 }
