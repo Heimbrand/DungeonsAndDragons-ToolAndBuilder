@@ -8,5 +8,5 @@ public class Alignment : BaseEntity
 
     public string Name { get; set; } = default!;
     public string? Description { get; set; }
-    public bool IsPre5E { get; set; } = default!;
+    public bool IsPre6E { get; set; } = default!;
 }

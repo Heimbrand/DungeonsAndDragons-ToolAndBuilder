@@ -10,17 +10,15 @@ public class Character : BaseEntity
     public int? ArmorClass { get; set; }
     public int? Initiative { get; set; }
     public int? Level { get; set; }
-    public int? Experience { get; set; }
+    public double? Experience { get; set; }
     public string? Speed { get; set; }
     public int? ProficiencyBonus { get; set; }
     public int? CurrentHitPoints { get; set; }
     public int? HitPointsMax { get; set; }
     public int? TemporaryHitPoints { get; set; }
     public string? HitDice { get; set; }
-    public int? DeathSaveSuccesses { get; set; }
-    public int? DeathSaveFailures { get; set; }
     public bool? IsDead { get; set; }
-    public bool IsPre5E { get; set; } = default!;
+    public bool IsPre6E { get; set; } = default!;
 
 
     public int? Strength { get; set; }

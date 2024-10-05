@@ -33,15 +33,7 @@ public class AlignmentRepository(DnDbContext context) : IAlignmentRepository
 
         return fuzzyScored;
     }
-    public async Task<IEnumerable<Alignment>> GetManyPre5EAlignments(int start, int count)
-    {
-        var pre5EAlignments = await context.Alignments.Where(a=> a.IsPre5E == true).Skip(start).Take(count).ToListAsync();
-
-        if (pre5EAlignments is null)
-            throw new Exception("No Pre5E Alignments where found");
-        
-        return pre5EAlignments;
-    }
+ 
     public async Task<IEnumerable<Alignment>> GetAllAsync()
     {
         var alignments = await context.Alignments.ToListAsync();
